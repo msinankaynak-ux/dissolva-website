@@ -17,7 +17,7 @@ body{font-family:-apple-system,'Inter',system-ui,sans-serif;background:var(--ox4
 
 /* NAV */
 nav{position:sticky;top:0;z-index:100;background:rgba(0,17,42,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border2);padding:0 40px;display:flex;align-items:center;height:60px;gap:32px}
-.nav-logo{font-size:18px;font-weight:700;color:white;letter-spacing:-0.3px;margin-right:auto;text-decoration:none}
+.nav-logo{font-size:18px;font-weight:800;color:white;letter-spacing:-0.5px;margin-right:auto;text-decoration:none;background:var(--ox4);padding:4px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:0}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:13.5px;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
@@ -166,7 +166,7 @@ svg.lc{width:100%;height:88px}
 
 /* FOOTER */
 footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-logo{font-size:20px;font-weight:800;color:white;letter-spacing:-0.5px}
+.footer-logo{font-size:20px;font-weight:800;color:white;letter-spacing:-0.5px;background:var(--ox);padding:4px 14px;border-radius:6px;display:inline-flex;align-items:center}
 .footer-logo span{color:var(--gold)}
 .footer-links{display:flex;gap:28px}
 .footer-links a{font-size:13px;color:rgba(232,224,208,0.3);text-decoration:none;transition:color 0.2s}
@@ -187,7 +187,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Dissolv<span>A</span>™</a>
+  <a href="#" class="nav-logo">Dissolv<span style="color:var(--gold);">A</span><span style="color:rgba(232,224,208,0.6);font-size:0.7em;vertical-align:super;">™</span></a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#compare">Compare</a></li>
@@ -203,7 +203,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   <h1>Dissolution Analysis,<br><span>Reimagined.</span></h1>
   <p>Professional-grade dissolution modeling, f2 similarity, and compliance engine — in one streamlined web platform. No installs, no macros.</p>
   <div class="btn-group">
-    <a href="https://dissanalyze.streamlit.app" target="_blank" class="btn-primary">Launch DissolvA Free →</a>
+    <a href="https://dissanalyze.streamlit.app" target="_blank" class="btn-primary">Launch Dissolv<span style="color:var(--ox4);">A</span>™ Free →</a>
     <a href="#tutorial" class="btn-outline">Watch Tutorial</a>
   </div>
   <div class="stats-row">
@@ -228,7 +228,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
       </div>
       <div class="app-body">
         <div class="app-sidebar">
-          <div class="app-logo-s">Dissolv<span>A</span>™</div>
+          <div class="app-logo-s" style="background:var(--ox4);padding:4px 10px;border-radius:5px;display:inline-block;margin:8px 16px 18px;">Dissolv<span style="color:var(--gold);">A</span>™</div>
           <div class="nav-lbl">Analysis</div>
           <div class="nav-it on"><div class="ndot"></div>Data Input</div>
           <div class="nav-it"><div class="ndot"></div>Kinetic Fitting</div>
@@ -276,7 +276,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         <div class="video-lbl">Click to play · Replace with your YouTube embed URL</div>
       </div>
       <div class="video-bar">
-        <div class="vbt">DissolvA™ — Full Platform Walkthrough</div>
+        <div class="vbt"><span style="color:white;font-weight:800;">Dissolv</span><span style="color:#FFBF00;font-weight:800;">A</span>™ — Full Platform Walkthrough</div>
         <div class="vbd">3:24</div>
       </div>
     </div>
@@ -433,8 +433,8 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 <section class="compare-section" id="compare">
   <div class="compare-inner">
     <div class="sec-label">Comparison</div>
-    <div class="sec-title">How DissolvA compares.</div>
-    <div class="sec-sub">See how DissolvA stacks up against established dissolution software tools used in pharmaceutical research.</div>
+    <div class="sec-title">How Dissolv<span style="color:var(--gold);">A</span>™ compares.</div>
+    <div class="sec-sub">See how <span style="background:var(--ox4);padding:1px 6px;border-radius:3px;font-weight:700;color:white;">Dissolv<span style="color:#FFBF00;">A</span>™</span> stacks up against established dissolution software tools used in pharmaceutical research.</div>
     <table class="compare-table">
       <thead>
         <tr>
@@ -442,7 +442,11 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
           <th>DDSolver <sup>1</sup></th>
           <th>KinetDS <sup>2</sup></th>
           <th>RKinetDS <sup>3</sup></th>
-          <th class="hl col-hl">DissolvA™</th>
+          <th class="hl col-hl">
+            <span style="background:var(--ox4);padding:4px 10px;border-radius:5px;display:inline-flex;align-items:center;gap:0;letter-spacing:-0.3px;">
+              <span style="color:white;font-weight:800;">DISSOLV</span><span style="color:#FFBF00;font-weight:800;">A</span><span style="color:rgba(232,224,208,0.6);font-size:0.65em;vertical-align:super;">™</span>
+            </span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -471,7 +475,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 <section class="quote-section">
   <div class="quote-inner">
     <div class="quote-mark">"</div>
-    <div class="quote-text">DissolvA brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform.</div>
+    <div class="quote-text"><span style="background:var(--ox4);padding:2px 8px;border-radius:4px;font-weight:800;">Dissolv<span style="color:#FFBF00;">A</span>™</span> brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform.</div>
     <div class="quote-author"><strong>M. Sinan KAYNAK, PhD</strong> · Faculty of Pharmacy, Anadolu University</div>
   </div>
 </section>
@@ -517,12 +521,12 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 
 <section class="cta-section">
   <h2>Ready to modernize your<br>dissolution workflow?</h2>
-  <p>Join researchers worldwide using DissolvA for FDA-compliant dissolution analysis.</p>
-  <a href="https://dissanalyze.streamlit.app" target="_blank" class="btn-dark">Launch DissolvA Free →</a>
+  <p>Join researchers worldwide using <span style="font-weight:700;">Dissolv<span style="color:var(--ox4);">A</span>™</span> for FDA-compliant dissolution analysis.</p>
+  <a href="https://dissanalyze.streamlit.app" target="_blank" class="btn-dark">Launch Dissolv<span style="color:var(--ox4);">A</span>™ Free →</a>
 </section>
 
 <footer>
-  <div class="footer-logo">Dissolv<span>A</span>™</div>
+  <div class="footer-logo">Dissolv<span style="color:var(--gold);">A</span><span style="color:rgba(232,224,208,0.5);font-size:0.65em;vertical-align:super;">™</span></div>
   <div class="footer-links">
     <a href="#features">Features</a>
     <a href="#compare">Compare</a>
