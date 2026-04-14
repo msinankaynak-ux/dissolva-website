@@ -299,7 +299,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   <h1>Dissolution Analysis,<br><span>Reimagined.</span></h1>
   <p>Professional-grade dissolution modeling, f2 similarity, and compliance engine — in one streamlined web platform. No installs, no macros.</p>
   <div class="btn-group">
-    <a href="https://dissanalyze.streamlit.app" target="_blank" style="background:#00112a;color:white;font-size:15px;font-weight:700;padding:15px 32px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s;">Launch Dissolv<span style="color:#FFBF00;font-weight:700;">A</span>™ Free →</a>
+    <a href="https://dissanalyze.streamlit.app" target="_blank" style="background:transparent;color:white;font-size:15px;font-weight:700;padding:15px 32px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.35);text-decoration:none;display:inline-block;transition:border-color 0.2s;">Launch Dissolv<span style="color:#FFBF00;font-weight:700;">A</span>™ Free →</a>
     <a href="#tutorial" class="btn-outline">Watch Tutorial</a>
   </div>
   <div class="stats-row">
@@ -767,28 +767,29 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 
 <section class="pricing-section" id="pricing" style="background:var(--ox4);padding:80px 40px">
 <style>
-.pr-table{max-width:780px;margin:0 auto 48px;border:1px solid rgba(255,191,0,0.12);border-radius:14px;overflow:hidden}
-.pr-thead{display:grid;grid-template-columns:1fr 110px 110px;background:rgba(0,49,113,0.5);padding:14px 24px;border-bottom:1px solid rgba(255,191,0,0.1)}
-.pr-th{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
-.pr-th.center{text-align:center}
-.pr-th.gold{color:rgba(255,191,0,0.8)}
-.pr-th.dim{color:rgba(232,224,208,0.3)}
-.pr-row{display:grid;grid-template-columns:1fr 110px 110px;padding:13px 24px;border-bottom:1px solid rgba(255,191,0,0.05);align-items:center}
-.pr-row:last-child{border-bottom:none}
-.pr-row.pro-row{background:rgba(255,191,0,0.03)}
-.pr-row.sec-hdr{background:rgba(0,49,113,0.3);padding:10px 24px}
-.pr-sec-lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,191,0,0.5)}
-.pr-feat{font-size:13.5px;color:rgba(232,224,208,0.82)}
-.pr-note{font-size:11px;color:rgba(255,191,0,0.45);margin-top:2px}
-.pr-check{text-align:center;color:#4caf82;font-size:15px}
-.pr-dash{text-align:center;color:rgba(232,224,208,0.15);font-size:15px}
-.pr-pro-badge{text-align:center;font-size:10px;font-weight:700;color:rgba(255,191,0,0.85);letter-spacing:1px;text-transform:uppercase}
-.pr-beta{display:inline-block;background:rgba(255,191,0,0.1);color:rgba(255,191,0,0.7);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid rgba(255,191,0,0.2);margin-left:6px;letter-spacing:0.5px;vertical-align:middle}
-.pr-waitlist{max-width:780px;margin:0 auto;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.22);border-radius:14px;padding:36px;text-align:center}
-.pr-wl-title{font-size:20px;font-weight:800;color:white;margin-bottom:8px}
-.pr-wl-sub{font-size:14px;color:rgba(232,224,208,0.5);margin-bottom:24px;line-height:1.75}
-.pr-wl-btn{background:var(--gold);color:var(--ox4);font-size:14px;font-weight:700;padding:14px 36px;border-radius:10px;text-decoration:none;display:inline-block}
-.pr-wl-note{font-size:11px;color:rgba(232,224,208,0.18);margin-top:12px}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:0 auto}
+.pc-card{border-radius:16px;padding:36px 32px;position:relative;box-sizing:border-box}
+.pc-card-core{background:rgba(0,33,71,0.5);border:1px solid rgba(255,255,255,0.08)}
+.pc-card-pro{background:rgba(255,191,0,0.04);border:2px solid rgba(255,191,0,0.35)}
+.pc-plan-name{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(232,224,208,0.4);margin-bottom:12px}
+.pc-plan-name.gold{color:rgba(255,191,0,0.7)}
+.pc-price{font-size:42px;font-weight:800;color:white;letter-spacing:-2px;line-height:1;margin-bottom:4px}
+.pc-price-note{font-size:13px;color:rgba(232,224,208,0.35);margin-bottom:6px}
+.pc-desc{font-size:13px;color:rgba(232,224,208,0.4);margin-bottom:28px;line-height:1.6}
+.pc-features{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px}
+.pc-features li{font-size:13.5px;color:rgba(232,224,208,0.75);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.pc-features li::before{content:'';width:18px;height:18px;min-width:18px;border-radius:50%;background:rgba(76,175,130,0.12);border:1px solid rgba(76,175,130,0.3);margin-top:1px;flex-shrink:0}
+.pc-features li.beta-li{color:rgba(255,191,0,0.75)}
+.pc-features li.beta-li::before{background:rgba(255,191,0,0.08);border-color:rgba(255,191,0,0.25)}
+.pc-btn{width:100%;padding:15px;border-radius:11px;font-size:14px;font-weight:700;cursor:pointer;border:none;text-align:center;display:block;text-decoration:none;transition:all 0.2s;box-sizing:border-box}
+.pc-btn-core{background:rgba(255,255,255,0.07);color:white}
+.pc-btn-pro{background:var(--gold);color:var(--ox4)}
+.pc-badge{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--ox4);font-size:10px;font-weight:800;padding:4px 12px;border-radius:6px;letter-spacing:0.5px;text-transform:uppercase}
+.pc-beta-note{font-size:11px;color:rgba(255,191,0,0.4);margin-top:10px;text-align:center;font-style:italic;line-height:1.6}
+.pc-founding{display:inline-flex;align-items:center;gap:6px;background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.2);border-radius:6px;padding:6px 12px;margin-bottom:20px}
+.pc-founding span{font-size:11px;color:rgba(255,191,0,0.7);font-weight:600;letter-spacing:0.5px}
+.pc-beta-tag{font-size:10px;background:rgba(255,191,0,0.1);border:1px solid rgba(255,191,0,0.2);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr}}
 </style>
 
   <div style="text-align:center;margin-bottom:52px">
@@ -797,45 +798,52 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
     <div style="font-size:15px;color:var(--text-muted);max-width:520px;margin:10px auto 0;line-height:1.75">Core is free forever. Pro is free during beta — join now and lock in founding pricing before we launch.</div>
   </div>
 
-  <div class="pr-table">
-    <div class="pr-thead">
-      <div class="pr-th dim">Feature</div>
-      <div class="pr-th dim center">Academic</div>
-      <div class="pr-th gold center">Pro</div>
+  <div class="pc-grid">
+
+    <div class="pc-card pc-card-core">
+      <div class="pc-plan-name">Core</div>
+      <div class="pc-price">$0</div>
+      <div class="pc-price-note">Forever free</div>
+      <div class="pc-desc">Designed for researchers and students.<br>Everything you need for academic dissolution analysis.</div>
+      <ul class="pc-features">
+        <li>f1 / f2 Similarity Analysis</li>
+        <li>62 Kinetic Models (full library)</li>
+        <li>Compliance Engine — OOS flagging</li>
+        <li>Statistical Analysis — MDT, DE</li>
+        <li>USP / FDA / EP monograph checks</li>
+        <li>Excel Report (6 sheets)</li>
+        <li class="beta-li">Bootstrap f2 — parametric <span class="pc-beta-tag">BETA</span></li>
+      </ul>
+      <a href="https://dissanalyze.streamlit.app" target="_blank" class="pc-btn pc-btn-core">Get Started Free →</a>
     </div>
 
-    <div class="pr-row sec-hdr"><div class="pr-sec-lbl">Core Analysis</div></div>
-    <div class="pr-row"><div class="pr-feat">f1 / f2 Similarity Analysis</div><div class="pr-check">✓</div><div class="pr-check">✓</div></div>
-    <div class="pr-row"><div class="pr-feat">62 Kinetic Models (full library)</div><div class="pr-check">✓</div><div class="pr-check">✓</div></div>
-    <div class="pr-row"><div class="pr-feat">Compliance Engine — OOS flagging</div><div class="pr-check">✓</div><div class="pr-check">✓</div></div>
-    <div class="pr-row"><div class="pr-feat">Statistical Analysis — MDT, DE</div><div class="pr-check">✓</div><div class="pr-check">✓</div></div>
-    <div class="pr-row"><div class="pr-feat">USP / FDA / EP monograph checks</div><div class="pr-check">✓</div><div class="pr-check">✓</div></div>
-    <div class="pr-row"><div class="pr-feat">Excel Report (6 sheets)</div><div class="pr-check">✓</div><div class="pr-check">✓</div></div>
-    <div class="pr-row">
-      <div><div class="pr-feat">Bootstrap f2 — parametric<span class="pr-beta">BETA</span></div><div class="pr-note">Free during beta period</div></div>
-      <div class="pr-check">✓</div><div class="pr-check">✓</div>
+    <div class="pc-card pc-card-pro">
+      <div class="pc-badge">Beta — Free Now</div>
+      <div class="pc-plan-name gold">Pro</div>
+      <div class="pc-price" style="color:var(--gold)">$0</div>
+      <div class="pc-price-note">Free during beta <span style="color:rgba(232,224,208,0.25)">· Paid at launch</span></div>
+      <div class="pc-desc">Built for industry professionals and CROs.<br>Full suite — AI intelligence, regulatory reporting, batch workflows.</div>
+      <div class="pc-founding">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Founding members lock in early access pricing — forever.</span>
+      </div>
+      <ul class="pc-features">
+        <li>Everything in Core</li>
+        <li class="beta-li">AI-Powered Model Recommendation <span class="pc-beta-tag">BETA</span></li>
+        <li class="beta-li">Bootstrap Method Advisor <span class="pc-beta-tag">BETA</span></li>
+        <li class="beta-li">Regulatory Guidance Engine <span class="pc-beta-tag">BETA</span></li>
+        <li class="beta-li">CV &amp; Bootstrap Eligibility Auto-Check <span class="pc-beta-tag">BETA</span></li>
+        <li class="beta-li">Bootstrap f2 — nonparametric <span class="pc-beta-tag">BETA</span></li>
+        <li>Full 8-sheet Excel Report</li>
+        <li>Comparative PDF Report</li>
+        <li>Multi-Profile Batch Analysis</li>
+        <li>Custom Branding on Reports</li>
+        <li>Priority Support + Early Module Access</li>
+      </ul>
+      <a href="https://tally.so/r/44oM55" target="_blank" class="pc-btn pc-btn-pro">Join Pro Beta →</a>
+      <div class="pc-beta-note">Free during beta · Founding price locked at launch<br>Downgrade to Core anytime, no questions asked.</div>
     </div>
 
-    <div class="pr-row sec-hdr"><div class="pr-sec-lbl">Pro — AI &amp; Regulatory Intelligence</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">AI-Powered Kinetic Model Recommendation</div><div class="pr-note">Profile shape analysis → optimal model suggestion</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Bootstrap Method Advisor</div><div class="pr-note">Parametric vs nonparametric — guided by Shah 1998</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Regulatory Guidance Engine</div><div class="pr-note">FDA / EMA / USP — step-by-step compliance commentary</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">CV &amp; Bootstrap Eligibility Auto-Check</div><div class="pr-note">Automated FDA/EMA time-based CV assessment</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Bootstrap f2 — nonparametric</div><div class="pr-note">Shah 1998 methodology · recommended for CV &gt; 15%</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-
-    <div class="pr-row sec-hdr"><div class="pr-sec-lbl">Pro — Reporting &amp; Workflow</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Full 8-sheet Excel Report</div><div class="pr-note">Bootstrap results, charts, similarity reports included</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Comparative PDF Report</div><div class="pr-note">Regulatory-ready Test vs Reference summary</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Multi-Profile Batch Analysis</div><div class="pr-note">Multiple test–reference comparisons in one session</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Custom Branding on Reports</div><div class="pr-note">Add your institution logo and analyst details</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-    <div class="pr-row pro-row"><div><div class="pr-feat">Priority Support + Early Module Access</div><div class="pr-note">IVIVC and upcoming modules — Pro users first</div></div><div class="pr-dash">—</div><div class="pr-pro-badge">PRO</div></div>
-  </div>
-
-  <div class="pr-waitlist">
-    <div class="pr-wl-title">Pro plan is coming.</div>
-    <div class="pr-wl-sub">Beta users receive early access pricing — locked in for life.<br>Join the waitlist and be the first to know.</div>
-    <a href="mailto:dissolva.app@gmail.com?subject=DissolvA%20Pro%20%E2%80%94%20Waitlist%20Request&body=Hi%2C%0A%0AI%27d%20like%20to%20join%20the%20DissolvA%20Pro%20waitlist%20and%20be%20notified%20when%20the%20Pro%20plan%20becomes%20available.%0A%0AI%27m%20currently%20using%20DissolvA%20for%3A%20%5Bdissolution%20analysis%20%2F%20research%20%2F%20regulatory%20submissions%5D%0A%0APlease%20keep%20me%20updated%20on%20early%20access%20pricing.%0A%0ABest%20regards%2C" class="pr-wl-btn">Join the Waitlist →</a>
-    <div class="pr-wl-note">No credit card required · Cancel anytime</div>
   </div>
 
 </section>
