@@ -366,27 +366,143 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 
 <section class="video-section" id="tutorial">
   <div class="video-wrap">
-    <div class="sec-label" style="text-align:center">Tutorial</div>
+    <div class="sec-label" style="text-align:center">Platform Overview</div>
     <div class="sec-title" style="text-align:center">Watch how it works.</div>
     <div class="sec-sub" style="text-align:center;margin:8px auto 0;max-width:480px">Step-by-step walkthrough — from uploading your dissolution data to generating a regulatory-ready Excel report.</div>
-    <div class="video-frame">
-      <div class="video-thumb" onclick="this.innerHTML='<iframe width=\'100%\' height=\'400\' src=\'YOUR_YOUTUBE_EMBED_URL\' frameborder=\'0\' allowfullscreen style=\'display:block\'></iframe>'">
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+
+    <div class="video-frame" style="background:transparent;border:none;border-radius:12px;overflow:hidden;margin-top:40px">
+      <div id="dv-slides" style="position:relative;height:420px;overflow:hidden;background:#001428;border-radius:12px 12px 0 0">
+
+        <div class="dv-slide active" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+          <div style="text-align:center">
+            <div style="position:relative;width:72px;height:72px;background:#003171;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px">
+              <div style="position:absolute;top:0;right:0;width:18px;height:5px;background:#FFBF00;border-radius:0 16px 0 3px"></div>
+              <div style="position:absolute;top:0;right:0;width:5px;height:18px;background:#FFBF00;border-radius:0 16px 0 3px"></div>
+              <span style="font-size:40px;font-weight:500;color:#FFBF00;line-height:1">A</span>
+            </div>
+            <div style="font-size:32px;font-weight:300;color:white;letter-spacing:-1px;margin-bottom:10px">Dissolv<b style="font-weight:600;color:#FFBF00">A</b><sup style="font-size:14px;color:rgba(255,255,255,0.3);font-weight:300">™</sup></div>
+            <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,191,0,0.55);font-weight:600;margin-bottom:24px">Pharmaceutical Intelligence Platform</div>
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+              <div style="background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:5px 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,191,0,0.7);font-weight:600">FDA · EMA · USP Compliant</div>
+              <div style="background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:5px 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,191,0,0.7);font-weight:600">62 Kinetic Models</div>
+              <div style="background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:5px 14px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,191,0,0.7);font-weight:600">Powered by AI</div>
+            </div>
+          </div>
         </div>
-        <div class="video-lbl">Click to play · Replace with your YouTube embed URL</div>
+
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+          <div style="width:100%;max-width:560px">
+            <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:10px;text-align:center">f1 / f2 Similarity Analysis</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="background:rgba(76,175,130,0.06);border:1px solid rgba(76,175,130,0.3);border-radius:10px;padding:14px"><div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(232,224,208,0.4);margin-bottom:6px;font-weight:600">Reference</div><div style="font-size:20px;font-weight:700;color:#4caf82;margin-bottom:2px">PASS</div><div style="font-size:11px;color:rgba(232,224,208,0.4)">87.2% @ 45 min</div></div>
+              <div style="background:rgba(76,175,130,0.06);border:1px solid rgba(76,175,130,0.3);border-radius:10px;padding:14px"><div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(232,224,208,0.4);margin-bottom:6px;font-weight:600">Test A</div><div style="font-size:20px;font-weight:700;color:#4caf82;margin-bottom:2px">PASS</div><div style="font-size:11px;color:rgba(232,224,208,0.4)">82.6% @ 45 min</div></div>
+              <div style="background:rgba(220,80,70,0.06);border:1px solid rgba(220,80,70,0.3);border-radius:10px;padding:14px;grid-column:1/-1"><div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(232,224,208,0.4);margin-bottom:6px;font-weight:600">Test B</div><div style="font-size:20px;font-weight:700;color:#e05a4e;margin-bottom:2px">OOS — Out of Spec</div><div style="font-size:11px;color:rgba(232,224,208,0.4)">73.1% @ 45 min · Below Q limit of 80%</div></div>
+              <div style="background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:10px;padding:14px;grid-column:1/-1;display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,191,0,0.6);font-weight:600">f2 Similarity Factor</div><div style="font-size:11px;color:rgba(232,224,208,0.35);margin-top:2px">Test A vs Reference</div></div><div style="text-align:right"><div style="font-size:26px;font-weight:700;color:#FFBF00">68.4</div><div style="font-size:11px;color:#4caf82;font-weight:600">SIMILAR (&gt;50)</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+          <div style="text-align:center;width:100%;max-width:500px">
+            <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:10px">Kinetic Model Library</div>
+            <div style="font-size:80px;font-weight:800;color:#FFBF00;letter-spacing:-4px;line-height:1">62</div>
+            <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(232,224,208,0.5);font-weight:600;margin-bottom:20px">Dissolution Models</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center">
+              <div style="background:rgba(255,191,0,0.05);border:1px solid rgba(255,191,0,0.3);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,191,0,0.8);font-weight:500">Zero Order</div>
+              <div style="background:rgba(255,191,0,0.05);border:1px solid rgba(255,191,0,0.3);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,191,0,0.8);font-weight:500">First Order</div>
+              <div style="background:rgba(255,191,0,0.05);border:1px solid rgba(255,191,0,0.3);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,191,0,0.8);font-weight:500">Higuchi</div>
+              <div style="background:rgba(255,191,0,0.05);border:1px solid rgba(255,191,0,0.3);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,191,0,0.8);font-weight:500">Korsmeyer-Peppas</div>
+              <div style="background:rgba(255,191,0,0.05);border:1px solid rgba(255,191,0,0.3);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,191,0,0.8);font-weight:500">Weibull</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Hixson-Crowell</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Baker-Lonsdale</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Hopfenberg</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Peppas-Sahlin</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">+ 52 more</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+          <div style="width:100%;max-width:520px">
+            <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:12px;text-align:center">Regulatory Compliance Engine</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px">
+              <div style="background:rgba(24,95,165,0.15);border:1px solid rgba(24,95,165,0.3);border-radius:8px;padding:10px 12px;text-align:center"><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#85B7EB;margin-bottom:3px">FDA</div><div style="font-size:9px;color:rgba(232,224,208,0.4);text-transform:uppercase;letter-spacing:0.5px">1997 Guidance</div></div>
+              <div style="background:rgba(15,110,86,0.15);border:1px solid rgba(15,110,86,0.3);border-radius:8px;padding:10px 12px;text-align:center"><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#5DCAA5;margin-bottom:3px">EMA</div><div style="font-size:9px;color:rgba(232,224,208,0.4);text-transform:uppercase;letter-spacing:0.5px">CHMP/QWP</div></div>
+              <div style="background:rgba(83,74,183,0.15);border:1px solid rgba(83,74,183,0.3);border-radius:8px;padding:10px 12px;text-align:center"><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#AFA9EC;margin-bottom:3px">USP</div><div style="font-size:9px;color:rgba(232,224,208,0.4);text-transform:uppercase;letter-spacing:0.5px">Monographs</div></div>
+            </div>
+            <div style="background:rgba(0,49,113,0.4);border:1px solid rgba(255,191,0,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-size:12px;color:rgba(232,224,208,0.7)">CV criterion — time-based (FDA: t≤15 min, EMA: t≤10 min)</span><span style="font-size:13px;font-weight:700;color:#4caf82">✓</span></div>
+            <div style="background:rgba(0,49,113,0.4);border:1px solid rgba(255,191,0,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-size:12px;color:rgba(232,224,208,0.7)">85% single-point rule — first exceeding point included</span><span style="font-size:13px;font-weight:700;color:#4caf82">✓</span></div>
+            <div style="background:rgba(0,49,113,0.4);border:1px solid rgba(255,191,0,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:12px;color:rgba(232,224,208,0.7)">OOS / OOT automatic flagging</span><span style="font-size:13px;font-weight:700;color:#4caf82">✓</span></div>
+          </div>
+        </div>
+
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+          <div style="width:100%;max-width:500px">
+            <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:12px;text-align:center">Bootstrap f2 Analysis</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+              <div style="background:rgba(0,49,113,0.4);border:1px solid rgba(255,191,0,0.12);border-radius:10px;padding:14px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,191,0,0.7)">Parametric</div><div style="font-size:9px;background:rgba(255,191,0,0.1);border:1px solid rgba(255,191,0,0.2);border-radius:4px;padding:2px 7px;color:rgba(255,191,0,0.6);font-weight:600">Shah 1998</div></div><div style="font-size:22px;font-weight:700;color:white;margin-bottom:2px">f2 = 68.4</div><div style="font-size:10px;color:rgba(232,224,208,0.35)">95% CI: [61.2 — 74.8]</div></div>
+              <div style="background:rgba(0,49,113,0.4);border:1px solid rgba(255,191,0,0.12);border-radius:10px;padding:14px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,191,0,0.7)">Nonparametric</div><div style="font-size:9px;background:rgba(255,191,0,0.1);border:1px solid rgba(255,191,0,0.2);border-radius:4px;padding:2px 7px;color:rgba(255,191,0,0.6);font-weight:600">Bootstrap</div></div><div style="font-size:22px;font-weight:700;color:white;margin-bottom:2px">f2 = 67.9</div><div style="font-size:10px;color:rgba(232,224,208,0.35)">95% CI: [60.8 — 73.5]</div></div>
+            </div>
+            <div style="background:rgba(76,175,130,0.08);border:1px solid rgba(76,175,130,0.25);border-radius:10px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between"><div style="font-size:12px;color:rgba(232,224,208,0.7)">Both methods confirm similarity (f2 &gt; 50)</div><div style="font-size:14px;font-weight:700;color:#4caf82">SIMILAR</div></div>
+          </div>
+        </div>
+
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+          <div style="text-align:center">
+            <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:10px">Start today — free forever</div>
+            <div style="font-size:28px;font-weight:700;color:white;letter-spacing:-0.5px;margin-bottom:8px;line-height:1.2">Ready to modernize your<br>dissolution workflow?</div>
+            <div style="font-size:13px;color:rgba(232,224,208,0.5);line-height:1.6;margin-bottom:24px">No install · No subscription · FDA &amp; EMA compliant<br>62 models · Bootstrap f2 · Professional Excel reports</div>
+            <a href="https://dissanalyze.streamlit.app" target="_blank" style="display:inline-block;background:#FFBF00;color:#00112a;font-size:14px;font-weight:700;padding:12px 28px;border-radius:10px;text-decoration:none;margin-bottom:16px">Launch Dissolv<span style="color:#003171">A</span>™ Free →</a>
+            <div style="font-size:10px;color:rgba(232,224,208,0.25);letter-spacing:1px;text-transform:uppercase">www.dissolva.app</div>
+          </div>
+        </div>
+
       </div>
-      <div class="video-bar">
-        <div class="vbt">Dissolv<span style="color:var(--gold);font-weight:500;">A</span>™ — Full Platform Walkthrough</div>
-        <div class="vbd">3:24</div>
+
+      <div style="background:#000d1a;border-top:1px solid rgba(255,191,0,0.08);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-radius:0 0 12px 12px">
+        <div style="font-size:12px;color:rgba(232,224,208,0.4);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Dissolv<b style="color:rgba(255,191,0,0.7);font-weight:600">A</b>™ — Predictive Dissolution Suite</div>
+        <div id="dv-dots" style="display:flex;gap:6px;align-items:center"></div>
+        <div id="dv-timer" style="font-size:11px;color:rgba(232,224,208,0.25);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">4s</div>
       </div>
     </div>
-    <div class="chapters">
-      <div class="ch"><div class="ch-n">1</div><div><div class="ch-ti">Uploading dissolution data & setting USP method parameters</div><div class="ch-du">0:00 – 0:45</div></div></div>
-      <div class="ch"><div class="ch-n">2</div><div><div class="ch-ti">Running kinetic model fitting across 62 models</div><div class="ch-du">0:46 – 1:30</div></div></div>
-      <div class="ch"><div class="ch-n">3</div><div><div class="ch-ti">f1/f2 similarity test and compliance engine verdict</div><div class="ch-du">1:31 – 2:20</div></div></div>
-      <div class="ch"><div class="ch-n">4</div><div><div class="ch-ti">Exporting the branded 8-sheet Excel report</div><div class="ch-du">2:21 – 3:24</div></div></div>
-    </div>
+
+    <script>
+    (function(){
+      var slides=document.querySelectorAll('#dv-slides .dv-slide');
+      var N=slides.length;
+      var cur=0;var paused=false;var countdown=4;
+      var dotsEl=document.getElementById('dv-dots');
+      var timerEl=document.getElementById('dv-timer');
+      for(var i=0;i<N;i++){
+        var d=document.createElement('button');
+        d.style.cssText='width:6px;height:6px;border-radius:50%;background:rgba(255,191,0,0.2);cursor:pointer;transition:all 0.2s;border:none;padding:0';
+        if(i===0){d.style.width='18px';d.style.borderRadius='3px';d.style.background='#FFBF00';}
+        (function(idx,btn){btn.onclick=function(){goTo(idx);paused=true;setTimeout(function(){paused=false;},8000);};})(i,d);
+        dotsEl.appendChild(d);
+      }
+      function goTo(n){
+        slides[cur].style.opacity='0';
+        cur=(n+N)%N;
+        slides[cur].style.opacity='1';
+        var btns=dotsEl.querySelectorAll('button');
+        btns.forEach(function(b,i){
+          b.style.width=i===cur?'18px':'6px';
+          b.style.borderRadius=i===cur?'3px':'50%';
+          b.style.background=i===cur?'#FFBF00':'rgba(255,191,0,0.2)';
+        });
+        countdown=4;timerEl.textContent='4s';
+      }
+      setInterval(function(){
+        if(paused)return;
+        countdown--;timerEl.textContent=countdown+'s';
+        if(countdown<=0){goTo(cur+1);}
+      },1000);
+      var frame=document.getElementById('dv-slides');
+      frame.addEventListener('mouseenter',function(){paused=true;});
+      frame.addEventListener('mouseleave',function(){paused=false;});
+    })();
+    </script>
+
   </div>
 </section>
 
