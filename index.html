@@ -182,12 +182,107 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   footer{flex-direction:column;align-items:flex-start}
   .features-section,.video-section,.quote-section,.compare-section,.cta-section,.screen-section,.mod-section,.pricing-section{padding:56px 20px}
 }
+
+/* ─── DissolvA Logo Component (Brand v1.0 — 14 Apr 2026) ─── */
+.dv-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.dv-mark {
+  position: relative;
+  background: #003171;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Gold corner accent — top right */
+.dv-mark::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  border-radius: 0 8px 0 2px;
+}
+.dv-mark::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  border-radius: 0 8px 0 2px;
+}
+.dv-mark span {
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+.dv-wordmark {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.dv-wordmark .dv-a { font-weight: 500; color: var(--gold); }
+.dv-wordmark .dv-tm {
+  font-size: 0.5em;
+  vertical-align: super;
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* NAV size — 32px mark */
+.dv-logo.nav-size .dv-mark {
+  width: 32px; height: 32px;
+}
+.dv-logo.nav-size .dv-mark::before { width: 9px; height: 3px; }
+.dv-logo.nav-size .dv-mark::after  { width: 3px; height: 9px; }
+.dv-logo.nav-size .dv-mark span { font-size: 18px; margin-top: 1px; }
+.dv-logo.nav-size .dv-wordmark { font-size: 18px; color: white; }
+
+/* FOOTER size — 28px mark */
+.dv-logo.footer-size .dv-mark {
+  width: 28px; height: 28px; border-radius: 7px;
+}
+.dv-logo.footer-size .dv-mark::before { width: 8px; height: 2px; border-radius: 0 7px 0 2px; }
+.dv-logo.footer-size .dv-mark::after  { width: 2px; height: 8px; border-radius: 0 7px 0 2px; }
+.dv-logo.footer-size .dv-mark span { font-size: 16px; margin-top: 1px; }
+.dv-logo.footer-size .dv-wordmark { font-size: 18px; color: white; }
+
+/* SIDEBAR / APP-FRAME size — 24px mark */
+.dv-logo.sidebar-size .dv-mark {
+  width: 24px; height: 24px; border-radius: 6px;
+}
+.dv-logo.sidebar-size .dv-mark::before { width: 7px; height: 2px; border-radius: 0 6px 0 1px; }
+.dv-logo.sidebar-size .dv-mark::after  { width: 2px; height: 7px; border-radius: 0 6px 0 1px; }
+.dv-logo.sidebar-size .dv-mark span { font-size: 13px; margin-top: 1px; }
+.dv-logo.sidebar-size .dv-wordmark { font-size: 14px; color: white; }
+
+/* COMPARE TABLE badge size */
+.dv-logo.badge-size { gap: 7px; }
+.dv-logo.badge-size .dv-mark {
+  width: 22px; height: 22px; border-radius: 5px;
+}
+.dv-logo.badge-size .dv-mark::before { width: 6px; height: 2px; border-radius: 0 5px 0 1px; }
+.dv-logo.badge-size .dv-mark::after  { width: 2px; height: 6px; border-radius: 0 5px 0 1px; }
+.dv-logo.badge-size .dv-mark span { font-size: 12px; margin-top: 1px; }
+.dv-logo.badge-size .dv-wordmark { font-size: 13px; color: white; font-weight: 600; }
+
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Dissolv<span style="color:var(--gold);">A</span><span style="color:rgba(232,224,208,0.6);font-size:0.7em;vertical-align:super;">™</span></a>
+  <a href="#" class="dv-logo nav-size">
+    <div class="dv-mark"><span>A</span></div>
+    <div class="dv-wordmark">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></div>
+  </a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#compare">Compare</a></li>
@@ -200,6 +295,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 
 <section class="hero">
   <div class="hero-badge">Pharmaceutical Intelligence Platform</div>
+
   <h1>Dissolution Analysis,<br><span>Reimagined.</span></h1>
   <p>Professional-grade dissolution modeling, f2 similarity, and compliance engine — in one streamlined web platform. No installs, no macros.</p>
   <div class="btn-group">
@@ -228,7 +324,12 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
       </div>
       <div class="app-body">
         <div class="app-sidebar">
-          <div class="app-logo-s" style="background:var(--ox4);padding:4px 10px;border-radius:5px;display:inline-block;margin:8px 16px 18px;">Dissolv<span style="color:var(--gold);">A</span>™</div>
+          <div style="padding:4px 16px 18px;">
+            <a href="#" class="dv-logo sidebar-size">
+              <div class="dv-mark"><span>A</span></div>
+              <div class="dv-wordmark">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></div>
+            </a>
+          </div>
           <div class="nav-lbl">Analysis</div>
           <div class="nav-it on"><div class="ndot"></div>Data Input</div>
           <div class="nav-it"><div class="ndot"></div>Kinetic Fitting</div>
@@ -276,7 +377,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         <div class="video-lbl">Click to play · Replace with your YouTube embed URL</div>
       </div>
       <div class="video-bar">
-        <div class="vbt"><span style="color:white;font-weight:800;">Dissolv</span><span style="color:#FFBF00;font-weight:800;">A</span>™ — Full Platform Walkthrough</div>
+        <div class="vbt">Dissolv<span style="color:var(--gold);font-weight:500;">A</span>™ — Full Platform Walkthrough</div>
         <div class="vbd">3:24</div>
       </div>
     </div>
@@ -290,6 +391,10 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 </section>
 
 <section class="features-section" id="features">
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+  <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:600;">Powered by AI</span>
+</div>
   <div class="sec-label">Core Capabilities</div>
   <div class="sec-title">Everything you need<br>in one place.</div>
   <div class="sec-sub">From raw vessel data to regulatory-ready reports — no Excel macros, no local installs required.</div>
@@ -329,6 +434,10 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 
 <section class="mod-section">
   <div class="mod-inner">
+    <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:600;">Predictive Dissolution Suite</span>
+    </div>
     <div class="sec-label" style="color:var(--gold)">Model Library</div>
     <div style="font-size:clamp(24px,3vw,38px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:8px">62 Kinetic Models — by Category</div>
     <div style="font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:40px">From zero-order to fractal kinetics — the most comprehensive dissolution model library available in any web-based platform.</div>
@@ -443,8 +552,9 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
           <th>KinetDS <sup>2</sup></th>
           <th>RKinetDS <sup>3</sup></th>
           <th class="hl col-hl">
-            <span style="background:var(--ox4);padding:4px 10px;border-radius:5px;display:inline-flex;align-items:center;gap:0;letter-spacing:-0.3px;">
-              <span style="color:white;font-weight:800;">DISSOLV</span><span style="color:#FFBF00;font-weight:800;">A</span><span style="color:rgba(232,224,208,0.6);font-size:0.65em;vertical-align:super;">™</span>
+            <span class="dv-logo badge-size" style="justify-content:center;">
+              <span class="dv-mark"><span>A</span></span>
+              <span class="dv-wordmark" style="font-size:13px;font-weight:600;">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></span>
             </span>
           </th>
         </tr>
@@ -475,7 +585,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 <section class="quote-section">
   <div class="quote-inner">
     <div class="quote-mark">"</div>
-    <div class="quote-text"><span style="background:var(--ox4);padding:2px 8px;border-radius:4px;font-weight:800;">Dissolv<span style="color:#FFBF00;">A</span>™</span> brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform.</div>
+    <div class="quote-text"><span style="font-weight:500;">Dissolv<span style="color:var(--gold);font-weight:500;">A</span>™</span> brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform.</div>
     <div class="quote-author"><strong>M. Sinan KAYNAK, PhD</strong> · Faculty of Pharmacy, Anadolu University</div>
   </div>
 </section>
@@ -526,7 +636,10 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 </section>
 
 <footer>
-  <div class="footer-logo">Dissolv<span style="color:var(--gold);">A</span><span style="color:rgba(232,224,208,0.5);font-size:0.65em;vertical-align:super;">™</span></div>
+  <a href="#" class="dv-logo footer-size">
+    <div class="dv-mark"><span>A</span></div>
+    <div class="dv-wordmark">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></div>
+  </a>
   <div class="footer-links">
     <a href="#features">Features</a>
     <a href="#compare">Compare</a>
