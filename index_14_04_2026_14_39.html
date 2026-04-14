@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DissolvA™ — Pharmaceutical Dissolution Analysis Platform</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ox:#002147;--ox2:#003166;--ox3:#001535;--ox4:#00112a;
+  --gold:#FFBF00;--gold2:#e6ac00;
+  --text:#E8E0D0;--text-muted:rgba(232,224,208,0.55);--text-dim:rgba(232,224,208,0.28);
+  --border:rgba(255,191,0,0.15);--border2:rgba(255,191,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,'Inter',system-ui,sans-serif;background:var(--ox4);color:var(--text)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(0,17,42,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border2);padding:0 40px;display:flex;align-items:center;height:60px;gap:32px}
+.nav-logo{font-size:18px;font-weight:800;color:white;letter-spacing:-0.5px;margin-right:auto;text-decoration:none;background:var(--ox4);padding:4px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:0}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:13.5px;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--ox4);font-size:13px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap}
+
+/* HERO */
+.hero{background:var(--ox4);padding:100px 40px 0;text-align:center}
+.hero-badge{display:inline-block;background:rgba(255,191,0,0.1);color:var(--gold);border:1px solid rgba(255,191,0,0.28);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:32px}
+.hero h1{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-2px;line-height:1.08;margin-bottom:24px;color:white}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:19px;color:var(--text-muted);max-width:540px;margin:0 auto 44px;line-height:1.75}
+.btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:0}
+.btn-primary{background:var(--gold);color:var(--ox4);font-size:15px;font-weight:700;padding:15px 32px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s}
+.btn-primary:hover{background:var(--gold2)}
+.btn-outline{background:transparent;color:white;font-size:15px;font-weight:500;padding:15px 32px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.2s}
+.btn-outline:hover{border-color:rgba(255,255,255,0.4)}
+.stats-row{display:flex;border-top:1px solid var(--border);margin-top:72px}
+.stat{flex:1;padding:30px 0;border-right:1px solid var(--border);text-align:center}
+.stat:last-child{border-right:none}
+.stat-n{font-size:34px;font-weight:800;color:var(--gold);letter-spacing:-1px}
+.stat-l{font-size:12px;color:var(--text-dim);margin-top:5px;letter-spacing:0.3px}
+
+/* SCREEN */
+.screen-section{background:var(--ox3);padding:80px 40px}
+.section-inner{max-width:1000px;margin:0 auto}
+.sec-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600}
+.sec-title{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:white;letter-spacing:-1px;line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:16px;color:var(--text-muted);max-width:520px;line-height:1.75;margin-bottom:48px}
+.app-frame{background:var(--ox4);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5)}
+.app-bar{background:var(--ox3);padding:13px 20px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border2)}
+.dot{width:11px;height:11px;border-radius:50%}
+.app-url{flex:1;text-align:center;font-size:12px;color:var(--text-dim);font-family:monospace}
+.app-body{display:flex;min-height:360px}
+.app-sidebar{width:190px;background:rgba(0,17,42,0.8);border-right:1px solid var(--border2);padding:18px 0;flex-shrink:0}
+.app-logo-s{padding:8px 18px 22px;font-size:15px;font-weight:700;color:white}
+.app-logo-s span{color:var(--gold)}
+.nav-lbl{font-size:9px;color:var(--text-dim);letter-spacing:1.8px;text-transform:uppercase;padding:0 18px;margin-bottom:6px;margin-top:14px}
+.nav-it{padding:8px 18px;font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:9px;cursor:pointer}
+.nav-it.on{background:rgba(255,191,0,0.1);color:var(--gold);border-left:2px solid var(--gold)}
+.ndot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+.app-main{flex:1;padding:26px;overflow:hidden}
+.apt{font-size:16px;font-weight:600;color:white;margin-bottom:5px}
+.aps{font-size:11px;color:var(--text-dim);margin-bottom:22px}
+.mrow{display:flex;gap:10px;margin-bottom:18px}
+.mc{flex:1;background:var(--ox2);border-radius:8px;padding:12px 14px;border:1px solid var(--border2)}
+.mv{font-size:17px;font-weight:700}
+.ml{font-size:10px;color:var(--text-dim);margin-top:3px}
+.lc-wrap{background:var(--ox2);border-radius:8px;padding:14px;border:1px solid var(--border2)}
+.lc-t{font-size:10px;color:var(--text-dim);margin-bottom:8px}
+svg.lc{width:100%;height:88px}
+
+/* VIDEO */
+.video-section{background:var(--ox4);padding:80px 40px}
+.video-wrap{max-width:860px;margin:0 auto;text-align:center}
+.video-frame{background:var(--ox3);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:40px}
+.video-thumb{width:100%;height:400px;background:linear-gradient(135deg,var(--ox2) 0%,var(--ox3) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;cursor:pointer;position:relative}
+.video-thumb::before{content:'PLACE YOUR SCREENSHOT HERE';position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase}
+.play-btn{width:72px;height:72px;border-radius:50%;background:rgba(255,191,0,0.15);border:2px solid rgba(255,191,0,0.5);display:flex;align-items:center;justify-content:center;transition:all 0.2s;cursor:pointer}
+.play-btn:hover{background:rgba(255,191,0,0.25);transform:scale(1.05)}
+.play-btn svg{width:24px;height:24px;fill:var(--gold);margin-left:5px}
+.video-lbl{font-size:14px;color:var(--text-dim)}
+.video-bar{background:var(--ox3);padding:14px 20px;display:flex;align-items:center;gap:14px;border-top:1px solid var(--border2)}
+.vbt{font-size:13px;color:var(--text-muted);flex:1}
+.vbd{font-size:12px;color:var(--text-dim)}
+.chapters{display:flex;flex-direction:column;gap:10px;margin-top:24px;text-align:left}
+.ch{display:flex;align-items:center;gap:16px;padding:14px 18px;background:rgba(0,33,71,0.5);border-radius:12px;border:1px solid var(--border2);cursor:pointer;transition:border-color 0.2s}
+.ch:hover{border-color:rgba(255,191,0,0.3)}
+.ch-n{width:30px;height:30px;border-radius:50%;background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.25);color:var(--gold);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-ti{font-size:13.5px;color:rgba(232,224,208,0.78);font-weight:500}
+.ch-du{font-size:11px;color:var(--text-dim);margin-top:3px}
+
+/* FEATURES */
+.features-section{padding:80px 40px;max-width:1100px;margin:0 auto}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:0}
+.feat-card{background:rgba(0,33,71,0.5);border:1px solid var(--border2);border-left:3px solid rgba(255,191,0,0.35);border-radius:14px;padding:30px 26px;transition:border-color 0.2s}
+.feat-card:hover{border-color:rgba(255,191,0,0.5);border-left-color:var(--gold)}
+.feat-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,191,0,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:1px solid rgba(255,191,0,0.15)}
+.feat-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat-title{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
+.feat-desc{font-size:14px;color:var(--text-muted);line-height:1.7}
+
+/* MODULES */
+.mod-section{background:var(--ox3);padding:80px 40px}
+.mod-inner{max-width:1100px;margin:0 auto}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:0}
+.mod-item{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:12px;border:1px solid var(--border2);background:rgba(0,17,42,0.5);transition:border-color 0.2s}
+.mod-item:hover{border-color:rgba(255,191,0,0.3)}
+.mod-dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.mod-name{font-size:14px;color:rgba(232,224,208,0.78);font-weight:500}
+.mod-tag{margin-left:auto;font-size:10px;background:rgba(255,191,0,0.1);color:var(--gold);border-radius:5px;padding:3px 8px;border:1px solid rgba(255,191,0,0.2);font-weight:600;white-space:nowrap}
+
+/* COMPARE */
+.compare-section{padding:80px 40px}
+.compare-inner{max-width:900px;margin:0 auto}
+.compare-table{width:100%;border-collapse:collapse;margin-top:40px}
+.compare-table th{padding:14px 20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);text-align:center;border-bottom:1px solid var(--border)}
+.compare-table th:first-child{text-align:left}
+.compare-table th.hl{color:var(--gold)}
+.compare-table td{padding:13px 20px;font-size:14px;color:var(--text-muted);text-align:center;border-bottom:1px solid var(--border2)}
+.compare-table td:first-child{text-align:left;color:var(--text);font-weight:500}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:rgba(255,191,0,0.02)}
+.ck{color:#4caf82;font-size:16px}
+.cx{color:rgba(232,224,208,0.2);font-size:16px}
+.col-hl{background:rgba(255,191,0,0.04)}
+
+/* PRICING */
+.pricing-section{background:var(--ox3);padding:80px 40px}
+.pricing-inner{max-width:900px;margin:0 auto;text-align:center}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;margin-top:48px}
+.plan{border-radius:18px;padding:36px 32px}
+.plan-free{border:1px solid var(--border);background:rgba(0,49,102,0.35)}
+.plan-pro{border:2px solid rgba(255,191,0,0.5);background:rgba(255,191,0,0.04);position:relative}
+.plan-badge{position:absolute;top:18px;right:18px;background:var(--gold);color:var(--ox4);font-size:11px;font-weight:800;padding:4px 12px;border-radius:6px;letter-spacing:0.5px}
+.plan-name{font-size:11px;font-weight:700;color:rgba(232,224,208,0.38);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.plan-price{font-size:48px;font-weight:800;color:white;letter-spacing:-2px;margin-bottom:6px;line-height:1}
+.plan-price span{font-size:16px;font-weight:400;color:rgba(232,224,208,0.3);letter-spacing:0}
+.plan-desc{font-size:13px;color:rgba(232,224,208,0.32);margin-bottom:32px}
+.pf{list-style:none;display:flex;flex-direction:column;gap:13px}
+.pf li{font-size:14px;color:rgba(232,224,208,0.72);display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.pf li::before{content:'';width:18px;height:18px;min-width:18px;border-radius:50%;background:rgba(255,191,0,0.1);border:1px solid rgba(255,191,0,0.32);margin-top:1px}
+.pf li.dim{color:rgba(232,224,208,0.25)}
+.pf li.dim::before{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.1)}
+.plan-btn{margin-top:32px;width:100%;padding:15px;border-radius:11px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all 0.2s}
+.pbf{background:rgba(255,255,255,0.07);color:white}
+.pbf:hover{background:rgba(255,255,255,0.12)}
+.pbp{background:var(--gold);color:var(--ox4)}
+.pbp:hover{background:var(--gold2)}
+.coming-note{font-size:12px;color:rgba(232,224,208,0.18);margin-top:6px;text-align:center;font-style:italic}
+
+/* TESTIMONIAL */
+.quote-section{padding:80px 40px;text-align:center}
+.quote-inner{max-width:700px;margin:0 auto}
+.quote-mark{font-size:64px;color:var(--gold);line-height:1;margin-bottom:8px;opacity:0.6}
+.quote-text{font-size:22px;color:white;line-height:1.6;font-weight:500;letter-spacing:-0.3px;margin-bottom:28px;font-style:italic}
+.quote-author{font-size:14px;color:var(--text-dim)}
+.quote-author strong{color:var(--text-muted);font-weight:600}
+
+/* CTA STRIP */
+.cta-section{background:var(--gold);padding:64px 40px;text-align:center}
+.cta-section h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--ox4);letter-spacing:-1px;margin-bottom:12px}
+.cta-section p{font-size:17px;color:rgba(0,33,71,0.65);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto}
+.btn-dark{background:var(--ox4);color:white;font-size:15px;font-weight:700;padding:16px 36px;border-radius:11px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s}
+.btn-dark:hover{background:var(--ox2)}
+
+/* FOOTER */
+footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-size:20px;font-weight:800;color:white;letter-spacing:-0.5px;background:var(--ox);padding:4px 14px;border-radius:6px;display:inline-flex;align-items:center}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:28px}
+.footer-links a{font-size:13px;color:rgba(232,224,208,0.3);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:12px;color:rgba(232,224,208,0.18)}
+
+@media(max-width:700px){
+  nav{padding:0 20px}.nav-links{display:none}
+  .hero{padding:72px 20px 0}.stats-row{flex-wrap:wrap}
+  .stat{flex:50%;border-right:none;border-bottom:1px solid var(--border)}
+  .app-sidebar{display:none}.plans{grid-template-columns:1fr}
+  .compare-table{font-size:12px}.compare-table td,.compare-table th{padding:10px}
+  footer{flex-direction:column;align-items:flex-start}
+  .features-section,.video-section,.quote-section,.compare-section,.cta-section,.screen-section,.mod-section,.pricing-section{padding:56px 20px}
+}
+
+/* ─── DissolvA Logo Component (Brand v1.0 — 14 Apr 2026) ─── */
+.dv-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.dv-mark {
+  position: relative;
+  background: #003171;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Gold corner accent — top right */
+.dv-mark::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  border-radius: 0 8px 0 2px;
+}
+.dv-mark::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  border-radius: 0 8px 0 2px;
+}
+.dv-mark span {
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+.dv-wordmark {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.dv-wordmark .dv-a { font-weight: 500; color: var(--gold); }
+.dv-wordmark .dv-tm {
+  font-size: 0.5em;
+  vertical-align: super;
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* NAV size — 32px mark */
+.dv-logo.nav-size .dv-mark {
+  width: 32px; height: 32px;
+}
+.dv-logo.nav-size .dv-mark::before { width: 9px; height: 3px; }
+.dv-logo.nav-size .dv-mark::after  { width: 3px; height: 9px; }
+.dv-logo.nav-size .dv-mark span { font-size: 18px; margin-top: 1px; }
+.dv-logo.nav-size .dv-wordmark { font-size: 18px; color: white; }
+
+/* FOOTER size — 28px mark */
+.dv-logo.footer-size .dv-mark {
+  width: 28px; height: 28px; border-radius: 7px;
+}
+.dv-logo.footer-size .dv-mark::before { width: 8px; height: 2px; border-radius: 0 7px 0 2px; }
+.dv-logo.footer-size .dv-mark::after  { width: 2px; height: 8px; border-radius: 0 7px 0 2px; }
+.dv-logo.footer-size .dv-mark span { font-size: 16px; margin-top: 1px; }
+.dv-logo.footer-size .dv-wordmark { font-size: 18px; color: white; }
+
+/* SIDEBAR / APP-FRAME size — 24px mark */
+.dv-logo.sidebar-size .dv-mark {
+  width: 24px; height: 24px; border-radius: 6px;
+}
+.dv-logo.sidebar-size .dv-mark::before { width: 7px; height: 2px; border-radius: 0 6px 0 1px; }
+.dv-logo.sidebar-size .dv-mark::after  { width: 2px; height: 7px; border-radius: 0 6px 0 1px; }
+.dv-logo.sidebar-size .dv-mark span { font-size: 13px; margin-top: 1px; }
+.dv-logo.sidebar-size .dv-wordmark { font-size: 14px; color: white; }
+
+/* COMPARE TABLE badge size */
+.dv-logo.badge-size { gap: 7px; }
+.dv-logo.badge-size .dv-mark {
+  width: 22px; height: 22px; border-radius: 5px;
+}
+.dv-logo.badge-size .dv-mark::before { width: 6px; height: 2px; border-radius: 0 5px 0 1px; }
+.dv-logo.badge-size .dv-mark::after  { width: 2px; height: 6px; border-radius: 0 5px 0 1px; }
+.dv-logo.badge-size .dv-mark span { font-size: 12px; margin-top: 1px; }
+.dv-logo.badge-size .dv-wordmark { font-size: 13px; color: white; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="dv-logo nav-size">
+    <div class="dv-mark"><span>A</span></div>
+    <div class="dv-wordmark">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#compare">Compare</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#026f716b6c636c69637b6c636942656f636b6e2c616d6f">Contact</a></li>
+  </ul>
+  <a href="https://dissanalyze.streamlit.app" target="_blank" class="nav-cta">Launch App →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Pharmaceutical Intelligence Platform</div>
+
+  <h1>Dissolution Analysis,<br><span>Reimagined.</span></h1>
+  <p>Professional-grade dissolution modeling, f2 similarity, and compliance engine — in one streamlined web platform. No installs, no macros.</p>
+  <div class="btn-group">
+    <a href="https://dissanalyze.streamlit.app" target="_blank" class="btn-primary">Launch Dissolv<span style="color:var(--ox4);">A</span>™ Free →</a>
+    <a href="#tutorial" class="btn-outline">Watch Tutorial</a>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-n">62</div><div class="stat-l">Kinetic Models</div></div>
+    <div class="stat"><div class="stat-n">FDA</div><div class="stat-l">Guideline Compliant</div></div>
+    <div class="stat"><div class="stat-n">USP/EP</div><div class="stat-l">Monograph Engine</div></div>
+    <div class="stat"><div class="stat-n">Free</div><div class="stat-l">Core Features</div></div>
+  </div>
+</section>
+
+<section class="screen-section">
+  <div class="section-inner">
+    <div class="sec-label">Live Platform</div>
+    <div class="sec-title">See it in action.</div>
+    <div class="sec-sub">A real dissolution analysis — from data upload to compliance verdict in under 3 minutes.</div>
+    <div class="app-frame">
+      <div class="app-bar">
+        <div class="dot" style="background:#ff5f57"></div>
+        <div class="dot" style="background:#febc2e"></div>
+        <div class="dot" style="background:#28c840"></div>
+        <div class="app-url">dissanalyze.streamlit.app</div>
+      </div>
+      <div class="app-body">
+        <div class="app-sidebar">
+          <div style="padding:4px 16px 18px;">
+            <a href="#" class="dv-logo sidebar-size">
+              <div class="dv-mark"><span>A</span></div>
+              <div class="dv-wordmark">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></div>
+            </a>
+          </div>
+          <div class="nav-lbl">Analysis</div>
+          <div class="nav-it on"><div class="ndot"></div>Data Input</div>
+          <div class="nav-it"><div class="ndot"></div>Kinetic Fitting</div>
+          <div class="nav-it"><div class="ndot"></div>f1 / f2 Similarity</div>
+          <div class="nav-it"><div class="ndot"></div>Bootstrap f2</div>
+          <div class="nav-lbl">Tools</div>
+          <div class="nav-it"><div class="ndot"></div>Statistical Analysis</div>
+          <div class="nav-it"><div class="ndot"></div>Excel Report</div>
+          <div class="nav-lbl">Settings</div>
+          <div class="nav-it"><div class="ndot"></div>Method Settings</div>
+        </div>
+        <div class="app-main">
+          <div class="apt">Data Input — Ibuprofen 400mg</div>
+          <div class="aps">3 profiles loaded · USP II · 900 mL · pH 6.8 · 50 rpm · Q = 80% at 45 min</div>
+          <div class="mrow">
+            <div class="mc"><div class="mv" style="color:#4caf82">✓ PASS</div><div class="ml">Reference · 87.2% @ 45 min</div></div>
+            <div class="mc"><div class="mv" style="color:#4caf82">✓ PASS</div><div class="ml">Test A · 82.6% @ 45 min</div></div>
+            <div class="mc"><div class="mv" style="color:#e05a4e">✗ OOS</div><div class="ml">Test B · 73.1% @ 45 min</div></div>
+          </div>
+          <div class="lc-wrap">
+            <div class="lc-t">Cumulative Drug Released (%)</div>
+            <svg class="lc" viewBox="0 0 400 88" preserveAspectRatio="none">
+              <polyline points="0,86 60,60 120,35 180,13 240,7 300,4 360,3 400,2" fill="none" stroke="#FFBF00" stroke-width="2.5"/>
+              <polyline points="0,86 60,66 120,42 180,20 240,11 300,8 360,6 400,4" fill="none" stroke="rgba(255,191,0,0.4)" stroke-width="1.8" stroke-dasharray="5,3"/>
+              <polyline points="0,86 60,74 120,57 180,36 240,24 300,18 360,13 400,10" fill="none" stroke="#e05a4e" stroke-width="1.8" stroke-dasharray="5,3"/>
+              <line x1="0" y1="18" x2="400" y2="18" stroke="rgba(255,191,0,0.3)" stroke-width="1" stroke-dasharray="7,4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section" id="tutorial">
+  <div class="video-wrap">
+    <div class="sec-label" style="text-align:center">Tutorial</div>
+    <div class="sec-title" style="text-align:center">Watch how it works.</div>
+    <div class="sec-sub" style="text-align:center;margin:8px auto 0;max-width:480px">Step-by-step walkthrough — from uploading your dissolution data to generating a regulatory-ready Excel report.</div>
+    <div class="video-frame">
+      <div class="video-thumb" onclick="this.innerHTML='<iframe width=\'100%\' height=\'400\' src=\'YOUR_YOUTUBE_EMBED_URL\' frameborder=\'0\' allowfullscreen style=\'display:block\'></iframe>'">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="video-lbl">Click to play · Replace with your YouTube embed URL</div>
+      </div>
+      <div class="video-bar">
+        <div class="vbt">Dissolv<span style="color:var(--gold);font-weight:500;">A</span>™ — Full Platform Walkthrough</div>
+        <div class="vbd">3:24</div>
+      </div>
+    </div>
+    <div class="chapters">
+      <div class="ch"><div class="ch-n">1</div><div><div class="ch-ti">Uploading dissolution data & setting USP method parameters</div><div class="ch-du">0:00 – 0:45</div></div></div>
+      <div class="ch"><div class="ch-n">2</div><div><div class="ch-ti">Running kinetic model fitting across 62 models</div><div class="ch-du">0:46 – 1:30</div></div></div>
+      <div class="ch"><div class="ch-n">3</div><div><div class="ch-ti">f1/f2 similarity test and compliance engine verdict</div><div class="ch-du">1:31 – 2:20</div></div></div>
+      <div class="ch"><div class="ch-n">4</div><div><div class="ch-ti">Exporting the branded 8-sheet Excel report</div><div class="ch-du">2:21 – 3:24</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section" id="features">
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+  <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:600;">Powered by AI</span>
+</div>
+  <div class="sec-label">Core Capabilities</div>
+  <div class="sec-title">Everything you need<br>in one place.</div>
+  <div class="sec-sub">From raw vessel data to regulatory-ready reports — no Excel macros, no local installs required.</div>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="feat-title">Intelligent Compliance Engine</div>
+      <div class="feat-desc">USP/FDA monograph compliance verified at Q-time via interpolation. Instant OOS flagging with academic root-cause analysis and ICH Q6A recommendations.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div class="feat-title">f1 / f2 Similarity Analysis</div>
+      <div class="feat-desc">FDA-compliant f1 and f2 calculation with 85% cutoff, Q-value and Q-time overlays, error bars, and automatic boundary-zone warnings when f2 is in the 45–55 range.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+      <div class="feat-title">62 Kinetic Models</div>
+      <div class="feat-desc">Zero-order to Gompertz, Weibull variants, sigmoid, burst-release, and fractal models. More models than DDSolver (40), KinetDS (15), or RKinetDS (36).</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+      <div class="feat-title">Excel Report Engine</div>
+      <div class="feat-desc">8-sheet professional reports with logo upload, project metadata, bootstrap results, dissolution charts, and similarity reports — all generated in one click.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="feat-title">Smart Profile Management</div>
+      <div class="feat-desc">Session persistence across all pages. Profile renaming syncs globally across all analyses. Project metadata — name, analyst, description — flows into report headers automatically.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="feat-title">Statistical Analysis</div>
+      <div class="feat-desc">MDT, DE, pooled statistics, per-profile tables with SD/RSD. Individual profile plots with error bars, Q-line overlays, and USP acceptance criterion annotation.</div>
+    </div>
+  </div>
+</section>
+
+<section class="mod-section">
+  <div class="mod-inner">
+    <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:600;">Predictive Dissolution Suite</span>
+    </div>
+    <div class="sec-label" style="color:var(--gold)">Model Library</div>
+    <div style="font-size:clamp(24px,3vw,38px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:8px">62 Kinetic Models — by Category</div>
+    <div style="font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:40px">From zero-order to fractal kinetics — the most comprehensive dissolution model library available in any web-based platform.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Basic</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">18 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Zero Order · First Order · Higuchi · Hixson-Crowell · Korsmeyer-Peppas · Hopfenberg · Baker-Lonsdale · Makoid-Banakar · Peppas-Sahlin (1&2) · Weibull · Gompertz · Logistic · Quadratic · Probit · 2nd/3rd Order · Michaelis-Menten
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Sigmoid</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">11 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Hill Equation · Richards · Modified Gompertz · Log-Normal · 4-Parameter Logistic · Dose-Response · Logistic 1&2 (DDSolver) · Gompertz 1&2 (DDSolver) · Probit 1 (DDSolver)
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Empirical</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">11 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Exponential Assoc. · Hyperbolic · Brody Growth · Bertalanffy · Pade · hPLC · Compreg · KP Modified · Makoid-Banakar Mod. · Linear-Exp. · Weibull-Sigmoid
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Multi-Phase</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">7 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Double Exponential · Triple Exponential · Power-Exponential · Biexponential Absorption · Gallagher-Corrigan · Combined Higuchi+FO · Henriksen
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Lag-Time</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">7 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          KP + Lag · First Order + Lag · Zero Order + Lag · Higuchi + Lag · Weibull (No Lag) · Hixson-Crowell + Lag · Probit Log
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Burst Release</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">5 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Zero Order + F0 · First Order + Fmax · First Order + Tlag + Fmax · Higuchi + F0 · KP + F0
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Fractal</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">3 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Fractal First Order · Stretched Exponential · Fractal Weibull
+        </div>
+      </div>
+
+      <div style="background:rgba(255,191,0,0.06);border:2px solid rgba(255,191,0,0.3);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-size:48px;font-weight:800;color:var(--gold);letter-spacing:-2px;line-height:1">62</div>
+        <div style="font-size:14px;color:rgba(232,224,208,0.6);margin-top:6px">Total Models</div>
+        <div style="font-size:12px;color:rgba(232,224,208,0.35);margin-top:8px;line-height:1.6">More than DDSolver (40),<br>KinetDS (~15) & RKinetDS (36)<br>combined</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <div class="mod-inner">
+    <div class="sec-label" style="color:var(--gold)">Analysis Modules</div>
+    <div class="sec-title" style="color:white">Everything works together.</div>
+    <div class="sec-sub" style="margin-bottom:40px">Each module shares the same data session — switch between pages without losing your work.</div>
+    <div class="mod-grid">
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">Data Input</span></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">Kinetic Fitting</span></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">Statistical Analysis</span></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">f1 / f2 Similarity</span></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">Bootstrap f2</span><div class="mod-tag">Pro</div></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">Compliance Engine</span></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">Excel Report</span></div>
+      <div class="mod-item"><div class="mod-dot"></div><span class="mod-name">All References</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="compare-section" id="compare">
+  <div class="compare-inner">
+    <div class="sec-label">Comparison</div>
+    <div class="sec-title">How Dissolv<span style="color:var(--gold);">A</span>™ compares.</div>
+    <div class="sec-sub">See how <span style="background:var(--ox4);padding:1px 6px;border-radius:3px;font-weight:700;color:white;">Dissolv<span style="color:#FFBF00;">A</span>™</span> stacks up against established dissolution software tools used in pharmaceutical research.</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>DDSolver <sup>1</sup></th>
+          <th>KinetDS <sup>2</sup></th>
+          <th>RKinetDS <sup>3</sup></th>
+          <th class="hl col-hl">
+            <span class="dv-logo badge-size" style="justify-content:center;">
+              <span class="dv-mark"><span>A</span></span>
+              <span class="dv-wordmark" style="font-size:13px;font-weight:600;">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></span>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Kinetic Models</td><td>40</td><td>~15</td><td>36</td><td class="col-hl" style="color:var(--gold);font-weight:700">62</td></tr>
+        <tr><td>Web-based (no install)</td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="ck">✓</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+        <tr><td>f1 / f2 Similarity</td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+        <tr><td>Bootstrap f2</td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+        <tr><td>USP Compliance Engine</td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+        <tr><td>Excel Report Export</td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+        <tr><td>Free to use</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+        <tr><td>Error bars & SD bands</td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:24px;padding:16px 20px;border-radius:8px;border:1px solid rgba(255,191,0,0.1);background:rgba(0,17,42,0.4);">
+      <p style="font-size:12px;color:rgba(232,224,208,0.35);line-height:1.8;margin:0;">
+        — Not available in the cited published version. Feature availability based on publicly documented versions as of April 2026.
+        Comparisons are made in good faith based on peer-reviewed publications and publicly available software.<br>
+        <sup>1</sup> Zhang Y et al. <em>AAPS J.</em> 2010;12(3):263–271 &nbsp;·&nbsp;
+        <sup>2</sup> Mendyk A et al. <em>Dissolution Technol.</em> 2012;19(1):6–11 &nbsp;·&nbsp;
+        <sup>3</sup> Obajtek N et al. <em>Dissolution Technol.</em> Feb 2026;20–25
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section" style="padding:80px 40px">
+<style>
+.tc-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.7);margin-bottom:8px;font-weight:600;text-align:center}
+.tc-title{font-size:clamp(22px,3vw,34px);font-weight:800;color:white;letter-spacing:-0.5px;margin-bottom:40px;text-align:center}
+.tc-viewport{overflow:hidden;position:relative;width:100%;max-width:1100px;margin:0 auto}
+.tc-track{display:flex;gap:16px;transition:transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94)}
+.tc-card{flex:0 0 calc(33.333% - 11px);background:rgba(0,33,71,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:14px;padding:22px 24px;text-align:left;box-sizing:border-box}
+.tc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tc-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.tc-name{font-size:14px;font-weight:700;color:white;margin:0 0 2px}
+.tc-role{font-size:11px;color:rgba(232,224,208,0.45);margin:0;line-height:1.4}
+.tc-stars{display:flex;gap:3px;margin-bottom:10px}
+.tc-star{color:var(--gold);font-size:13px}
+.tc-text{font-size:13px;color:rgba(232,224,208,0.7);line-height:1.7;margin:0;font-style:italic}
+.tc-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px}
+.tc-btn{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,191,0,0.2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(232,224,208,0.5);font-size:14px;transition:all 0.2s}
+.tc-btn:hover{border-color:rgba(255,191,0,0.5);color:var(--gold)}
+.tc-dots{display:flex;gap:6px;align-items:center}
+.tc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,191,0,0.2);cursor:pointer;transition:all 0.25s}
+.tc-dot.on{width:18px;border-radius:3px;background:var(--gold)}
+@media(max-width:768px){.tc-card{flex:0 0 calc(50% - 8px)}}
+@media(max-width:480px){.tc-card{flex:0 0 100%}}
+</style>
+
+  <div class="tc-label">User Reviews</div>
+  <div class="tc-title">Trusted by pharmaceutical researchers</div>
+
+  <div class="tc-viewport" id="tc-vp">
+    <div class="tc-track" id="tc-track">
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(0,49,113,0.8);color:var(--gold)">MSK</div>
+          <div><p class="tc-name">M. Sinan KAYNAK, PhD</p><p class="tc-role">Anadolu University, Faculty of Pharmacy</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"DissolvA brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(15,110,86,0.3);color:#4caf82">AY</div>
+          <div><p class="tc-name">Ayşe Yılmaz, PhD</p><p class="tc-role">Hacettepe University, Pharmaceutical Technology</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"Bootstrap f2 analizi için artık ayrı bir yazılıma ihtiyaç duymuyorum. DissolvA ile tüm süreç tek platformda tamamlanıyor, hem hızlı hem güvenilir."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(83,74,183,0.25);color:#a99ef5">RK</div>
+          <div><p class="tc-name">Rahul Krishnamurthy</p><p class="tc-role">Senior Formulation Scientist, Mumbai</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"The 62-model kinetic library is unmatched. I switched from DDSolver after the first session. The Excel report output alone saves me hours each week."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(133,79,11,0.3);color:#f5a623">MB</div>
+          <div><p class="tc-name">Marta Borkowska</p><p class="tc-role">Regulatory Affairs, Warsaw Pharma CRO</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"FDA and EMA compliance checks in one click. The USP monograph engine flagged an OOS result our team had missed. This tool has real regulatory depth."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(59,109,17,0.3);color:#7bc744">JL</div>
+          <div><p class="tc-name">Jian Li, PhD</p><p class="tc-role">R&D, Shenyang Pharmaceutical University</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"We use DissolvA for IVIVC preparatory work across multiple BCS Class II projects. The profile management and SD band visualizations are exceptional."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(153,60,29,0.3);color:#e88060">EO</div>
+          <div><p class="tc-name">Emeka Okafor</p><p class="tc-role">Bioequivalence Analyst, Lagos</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"No install, no macro, no Excel version compatibility issues. Just open the browser and analyze. DissolvA is exactly what dissolution science needed."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(153,53,86,0.3);color:#e88aaa">SN</div>
+          <div><p class="tc-name">Sofia Navarro, MSc</p><p class="tc-role">PhD Candidate, Universidad de Barcelona</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"As a PhD student I needed a tool that matched academic rigor. DissolvA cites the correct FDA and EMA guidance at every step — I can trust the output in my thesis."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(12,68,124,0.35);color:#78aee8">TW</div>
+          <div><p class="tc-name">Thomas Weber</p><p class="tc-role">QA Lead, Swiss Generics Manufacturer</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"The nonparametric bootstrap f2 with Shah 1998 methodology gives us the statistical confidence our QA submissions require. This is serious pharmaceutical software."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(8,80,65,0.3);color:#4caf82">PR</div>
+          <div><p class="tc-name">Priya Rajan, PhD</p><p class="tc-role">Formulation Scientist, Bangalore</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"Switched from DDSolver six months ago. The smart model recommendation feature alone saved my team dozens of hours of trial-and-error fitting. Remarkable tool."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(60,52,137,0.3);color:#a99ef5">KM</div>
+          <div><p class="tc-name">Kenji Matsuda</p><p class="tc-role">Dissolution Lab Manager, Osaka</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"Our dissolution lab adopted DissolvA as the standard reporting tool. The branded Excel export with professional charts is exactly what our clients expect."</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tc-controls">
+    <button class="tc-btn" id="tc-prev">&#8592;</button>
+    <div class="tc-dots" id="tc-dots"></div>
+    <button class="tc-btn" id="tc-next">&#8594;</button>
+  </div>
+
+<script>
+(function(){
+  var track=document.getElementById('tc-track');
+  var vp=document.getElementById('tc-vp');
+  var dotsEl=document.getElementById('tc-dots');
+  var cards=track.querySelectorAll('.tc-card');
+  var N=cards.length;
+  var cur=0;var paused=false;
+
+  function pv(){return vp.offsetWidth<480?1:vp.offsetWidth<768?2:3;}
+  function ts(){return N-pv()+1;}
+
+  function buildDots(){
+    dotsEl.innerHTML='';
+    for(var i=0;i<ts();i++){
+      var d=document.createElement('div');
+      d.className='tc-dot'+(i===cur?' on':'');
+      (function(idx){d.onclick=function(){goTo(idx);};})(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(i){
+    var max=ts()-1;
+    cur=i<0?0:i>max?max:i;
+    var cw=cards[0].getBoundingClientRect().width+16;
+    track.style.transform='translateX(-'+(cur*cw)+'px)';
+    dotsEl.querySelectorAll('.tc-dot').forEach(function(d,j){
+      d.className='tc-dot'+(j===cur?' on':'');
+    });
+  }
+
+  function setup(){
+    var p=pv();
+    cards.forEach(function(c){
+      if(p===1)c.style.flex='0 0 100%';
+      else if(p===2)c.style.flex='0 0 calc(50% - 8px)';
+      else c.style.flex='0 0 calc(33.333% - 11px)';
+    });
+    cur=Math.min(cur,ts()-1);
+    buildDots();goTo(cur);
+  }
+
+  document.getElementById('tc-next').onclick=function(){goTo(cur+1<ts()?cur+1:0);};
+  document.getElementById('tc-prev').onclick=function(){goTo(cur-1>=0?cur-1:ts()-1);};
+  vp.addEventListener('mouseenter',function(){paused=true;});
+  vp.addEventListener('mouseleave',function(){paused=false;});
+  setInterval(function(){if(!paused)goTo(cur+1<ts()?cur+1:0);},4000);
+  window.addEventListener('resize',setup);
+  setup();
+})();
+</script>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="sec-label" style="color:var(--gold)">Pricing</div>
+    <div class="sec-title" style="color:white">Start free. Go deeper with Pro.</div>
+    <div style="font-size:16px;color:var(--text-muted);max-width:480px;margin:10px auto 0;line-height:1.75">All core dissolution analyses are free forever. Pro unlocks Bootstrap f2 and advanced reporting features.</div>
+    <div class="plans">
+      <div class="plan plan-free">
+        <div class="plan-name">Academic</div>
+        <div class="plan-price">$0 <span>/ forever</span></div>
+        <div class="plan-desc">For researchers and students</div>
+        <ul class="pf">
+          <li>f1 / f2 Similarity Analysis</li>
+          <li>62 Kinetic Models (full library)</li>
+          <li>Intelligent Compliance Engine</li>
+          <li>Statistical Analysis — MDT, DE</li>
+          <li>Excel Report (6 sheets)</li>
+          <li>USP / FDA / EP monograph checks</li>
+        </ul>
+        <a href="https://dissanalyze.streamlit.app" target="_blank"><button class="plan-btn pbf">Get started free</button></a>
+      </div>
+      <div class="plan plan-pro">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">Professional</div>
+        <div class="plan-price">$19 <span>/ month</span></div>
+        <div class="plan-desc">For pharma R&D and CROs</div>
+        <ul class="pf">
+          <li>Everything in Academic</li>
+          <li>Bootstrap f2 — parametric + nonparametric</li>
+          <li>Full 8-sheet Excel Report</li>
+          <li>Priority email support</li>
+          <li class="dim">IVIVC Analysis — coming soon</li>
+        </ul>
+        <a href="/cdn-cgi/l/email-protection#19746a70777877727860777872597e74787075377a7674266a6c7b737c7a6d245d706a6a76756f5839496b76394d6b707875"><button class="plan-btn pbp">Start 14-day trial</button></a>
+        <div class="coming-note">IVIVC module included when released</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to modernize your<br>dissolution workflow?</h2>
+  <p>Join researchers worldwide using <span style="font-weight:700;">Dissolv<span style="color:var(--ox4);">A</span>™</span> for FDA-compliant dissolution analysis.</p>
+  <a href="https://dissanalyze.streamlit.app" target="_blank" class="btn-dark">Launch Dissolv<span style="color:var(--ox4);">A</span>™ Free →</a>
+</section>
+
+<footer>
+  <a href="#" class="dv-logo footer-size">
+    <div class="dv-mark"><span>A</span></div>
+    <div class="dv-wordmark">Dissolv<span class="dv-a">A</span><span class="dv-tm">™</span></div>
+  </a>
+  <div class="footer-links">
+    <a href="#features">Features</a>
+    <a href="#compare">Compare</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/cdn-cgi/l/email-protection#fd908e94939c93969c84939c96bd9a909c9491d39
