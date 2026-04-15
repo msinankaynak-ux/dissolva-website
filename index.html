@@ -70,6 +70,26 @@ nav{position:sticky;top:0;z-index:100;background:rgba(0,17,42,0.92);backdrop-fil
 .lc-t{font-size:10px;color:var(--text-dim);margin-bottom:8px}
 svg.lc{width:100%;height:88px}
 
+/* VIDEO */
+.video-section{background:var(--ox4);padding:80px 40px}
+.video-wrap{max-width:860px;margin:0 auto;text-align:center}
+.video-frame{background:var(--ox3);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:40px}
+.video-thumb{width:100%;height:400px;background:linear-gradient(135deg,var(--ox2) 0%,var(--ox3) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;cursor:pointer;position:relative}
+.video-thumb::before{content:'PLACE YOUR SCREENSHOT HERE';position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase}
+.play-btn{width:72px;height:72px;border-radius:50%;background:rgba(255,191,0,0.15);border:2px solid rgba(255,191,0,0.5);display:flex;align-items:center;justify-content:center;transition:all 0.2s;cursor:pointer}
+.play-btn:hover{background:rgba(255,191,0,0.25);transform:scale(1.05)}
+.play-btn svg{width:24px;height:24px;fill:var(--gold);margin-left:5px}
+.video-lbl{font-size:14px;color:var(--text-dim)}
+.video-bar{background:var(--ox3);padding:14px 20px;display:flex;align-items:center;gap:14px;border-top:1px solid var(--border2)}
+.vbt{font-size:13px;color:var(--text-muted);flex:1}
+.vbd{font-size:12px;color:var(--text-dim)}
+.chapters{display:flex;flex-direction:column;gap:10px;margin-top:24px;text-align:left}
+.ch{display:flex;align-items:center;gap:16px;padding:14px 18px;background:rgba(0,33,71,0.5);border-radius:12px;border:1px solid var(--border2);cursor:pointer;transition:border-color 0.2s}
+.ch:hover{border-color:rgba(255,191,0,0.3)}
+.ch-n{width:30px;height:30px;border-radius:50%;background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.25);color:var(--gold);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-ti{font-size:13.5px;color:rgba(232,224,208,0.78);font-weight:500}
+.ch-du{font-size:11px;color:var(--text-dim);margin-top:3px}
+
 /* FEATURES */
 .features-section{padding:80px 40px;max-width:1100px;margin:0 auto}
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:0}
@@ -105,6 +125,38 @@ svg.lc{width:100%;height:88px}
 .cx{color:rgba(232,224,208,0.2);font-size:16px}
 .col-hl{background:rgba(255,191,0,0.04)}
 
+/* PRICING */
+.pricing-section{background:var(--ox3);padding:80px 40px}
+.pricing-inner{max-width:900px;margin:0 auto;text-align:center}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;margin-top:48px}
+.plan{border-radius:18px;padding:36px 32px}
+.plan-free{border:1px solid var(--border);background:rgba(0,49,102,0.35)}
+.plan-pro{border:2px solid rgba(255,191,0,0.5);background:rgba(255,191,0,0.04);position:relative}
+.plan-badge{position:absolute;top:18px;right:18px;background:var(--gold);color:var(--ox4);font-size:11px;font-weight:800;padding:4px 12px;border-radius:6px;letter-spacing:0.5px}
+.plan-name{font-size:11px;font-weight:700;color:rgba(232,224,208,0.38);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.plan-price{font-size:48px;font-weight:800;color:white;letter-spacing:-2px;margin-bottom:6px;line-height:1}
+.plan-price span{font-size:16px;font-weight:400;color:rgba(232,224,208,0.3);letter-spacing:0}
+.plan-desc{font-size:13px;color:rgba(232,224,208,0.32);margin-bottom:32px}
+.pf{list-style:none;display:flex;flex-direction:column;gap:13px}
+.pf li{font-size:14px;color:rgba(232,224,208,0.72);display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+.pf li::before{content:'';width:18px;height:18px;min-width:18px;border-radius:50%;background:rgba(255,191,0,0.1);border:1px solid rgba(255,191,0,0.32);margin-top:1px}
+.pf li.dim{color:rgba(232,224,208,0.25)}
+.pf li.dim::before{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.1)}
+.plan-btn{margin-top:32px;width:100%;padding:15px;border-radius:11px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all 0.2s}
+.pbf{background:rgba(255,255,255,0.07);color:white}
+.pbf:hover{background:rgba(255,255,255,0.12)}
+.pbp{background:var(--gold);color:var(--ox4)}
+.pbp:hover{background:var(--gold2)}
+.coming-note{font-size:12px;color:rgba(232,224,208,0.18);margin-top:6px;text-align:center;font-style:italic}
+
+/* TESTIMONIAL */
+.quote-section{padding:80px 40px;text-align:center}
+.quote-inner{max-width:700px;margin:0 auto}
+.quote-mark{font-size:64px;color:var(--gold);line-height:1;margin-bottom:8px;opacity:0.6}
+.quote-text{font-size:22px;color:white;line-height:1.6;font-weight:500;letter-spacing:-0.3px;margin-bottom:28px;font-style:italic}
+.quote-author{font-size:14px;color:var(--text-dim)}
+.quote-author strong{color:var(--text-muted);font-weight:600}
+
 /* CTA STRIP */
 .cta-section{background:var(--gold);padding:64px 40px;text-align:center}
 .cta-section h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--ox4);letter-spacing:-1px;margin-bottom:12px}
@@ -121,92 +173,107 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 .footer-links a:hover{color:var(--gold)}
 .footer-copy{font-size:12px;color:rgba(232,224,208,0.18)}
 
-/* ── VALİDASYON SECTION ── */
-.val-section{background:var(--ox3);padding:80px 40px}
-.val-inner{max-width:1000px;margin:0 auto}
-.val-score-banner{display:flex;align-items:center;gap:40px;background:rgba(0,17,42,0.6);border:1px solid rgba(255,191,0,0.18);border-radius:16px;padding:32px 36px;margin-bottom:48px;flex-wrap:wrap}
-.val-score-num{font-size:72px;font-weight:800;color:var(--gold);letter-spacing:-3px;line-height:1}
-.val-score-label{font-size:12px;color:var(--text-dim);margin-top:4px;letter-spacing:0.5px}
-.val-score-divider{width:1px;height:64px;background:rgba(255,191,0,0.12);flex-shrink:0}
-.val-score-detail{flex:1;min-width:200px}
-.val-score-title{font-size:18px;font-weight:700;color:white;margin-bottom:8px;letter-spacing:-0.3px}
-.val-score-text{font-size:14px;color:var(--text-muted);line-height:1.7}
-.val-checks{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
-.val-check{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:rgba(76,175,130,0.9)}
-.val-check-dot{width:16px;height:16px;border-radius:50%;background:rgba(76,175,130,0.1);border:1px solid rgba(76,175,130,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;color:#4caf82}
-
-/* Validation cards grid */
-.val-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:40px}
-.val-card{background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:14px;overflow:hidden;transition:border-color 0.2s}
-.val-card:hover{border-color:rgba(255,191,0,0.25)}
-.val-card-head{background:rgba(0,33,71,0.6);border-bottom:1px solid var(--border2);padding:14px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.val-card-ref{font-size:13px;font-weight:700;color:white;line-height:1.4}
-.val-card-ref-sub{font-size:11px;color:var(--text-dim);margin-top:2px;font-weight:400}
-.val-card-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:3px 10px;border-radius:20px;background:rgba(255,191,0,0.1);color:var(--gold);border:1px solid rgba(255,191,0,0.2);white-space:nowrap;flex-shrink:0}
-.val-card-body{padding:20px}
-.val-compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,191,0,0.06);border-radius:8px;overflow:hidden;margin-bottom:14px}
-.val-compare-head{background:rgba(0,17,42,0.8);padding:8px 12px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim)}
-.val-compare-cell{background:rgba(0,17,42,0.5);padding:12px}
-.val-param{font-size:10px;color:var(--text-dim);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
-.val-val{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
-.val-val.ref{color:rgba(232,224,208,0.6)}
-.val-val.dissolva{color:var(--gold)}
-.val-match{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#4caf82;padding:6px 12px;border-radius:20px;background:rgba(76,175,130,0.06);border:1px solid rgba(76,175,130,0.2)}
-.val-note{font-size:11px;color:var(--text-dim);margin-top:10px;font-style:italic;line-height:1.6}
-
-/* Literature reference list */
-.val-ref-list{border:1px solid var(--border2);border-radius:12px;overflow:hidden}
-.val-ref-item{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border2);transition:background 0.2s}
-.val-ref-item:last-child{border-bottom:none}
-.val-ref-item:hover{background:rgba(255,191,0,0.02)}
-.val-ref-num{width:26px;height:26px;border-radius:6px;background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.18);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;margin-top:1px}
-.val-ref-text{flex:1}
-.val-ref-authors{font-size:13px;font-weight:600;color:rgba(232,224,208,0.8);margin-bottom:2px}
-.val-ref-journal{font-size:12px;color:var(--text-dim);font-style:italic}
-.val-ref-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(76,175,130,0.08);color:rgba(76,175,130,0.8);border:1px solid rgba(76,175,130,0.2);white-space:nowrap;flex-shrink:0;margin-top:2px}
-
 @media(max-width:700px){
   nav{padding:0 20px}.nav-links{display:none}
   .hero{padding:72px 20px 0}.stats-row{flex-wrap:wrap}
   .stat{flex:50%;border-right:none;border-bottom:1px solid var(--border)}
-  .app-sidebar{display:none}
+  .app-sidebar{display:none}.plans{grid-template-columns:1fr}
   .compare-table{font-size:12px}.compare-table td,.compare-table th{padding:10px}
   footer{flex-direction:column;align-items:flex-start}
-  .features-section,.video-section,.quote-section,.compare-section,.cta-section,.screen-section,.mod-section,.pricing-section,.val-section{padding:56px 20px}
-  .val-score-banner{gap:20px}.val-score-divider{display:none}
-  .val-compare-grid{grid-template-columns:1fr 1fr}
+  .features-section,.video-section,.quote-section,.compare-section,.cta-section,.screen-section,.mod-section,.pricing-section{padding:56px 20px}
 }
 
-/* ─── DissolvA Logo Component ─── */
-.dv-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.dv-mark{position:relative;background:#003171;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.dv-mark::before{content:'';position:absolute;top:0;right:0;background:var(--gold);border-radius:0 8px 0 2px}
-.dv-mark::after{content:'';position:absolute;top:0;right:0;background:var(--gold);border-radius:0 8px 0 2px}
-.dv-mark span{font-weight:500;color:var(--gold);line-height:1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
-.dv-wordmark{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:400;letter-spacing:-0.4px;line-height:1;white-space:nowrap}
-.dv-wordmark .dv-a{font-weight:500;color:var(--gold)}
-.dv-wordmark .dv-tm{font-size:0.5em;vertical-align:super;color:rgba(255,255,255,0.45);font-weight:400;letter-spacing:0}
-.dv-logo.nav-size .dv-mark{width:32px;height:32px}
-.dv-logo.nav-size .dv-mark::before{width:9px;height:3px}
-.dv-logo.nav-size .dv-mark::after{width:3px;height:9px}
-.dv-logo.nav-size .dv-mark span{font-size:18px;margin-top:1px}
-.dv-logo.nav-size .dv-wordmark{font-size:18px;color:white}
-.dv-logo.footer-size .dv-mark{width:28px;height:28px;border-radius:7px}
-.dv-logo.footer-size .dv-mark::before{width:8px;height:2px;border-radius:0 7px 0 2px}
-.dv-logo.footer-size .dv-mark::after{width:2px;height:8px;border-radius:0 7px 0 2px}
-.dv-logo.footer-size .dv-mark span{font-size:16px;margin-top:1px}
-.dv-logo.footer-size .dv-wordmark{font-size:18px;color:white}
-.dv-logo.sidebar-size .dv-mark{width:24px;height:24px;border-radius:6px}
-.dv-logo.sidebar-size .dv-mark::before{width:7px;height:2px;border-radius:0 6px 0 1px}
-.dv-logo.sidebar-size .dv-mark::after{width:2px;height:7px;border-radius:0 6px 0 1px}
-.dv-logo.sidebar-size .dv-mark span{font-size:13px;margin-top:1px}
-.dv-logo.sidebar-size .dv-wordmark{font-size:14px;color:white}
-.dv-logo.badge-size{gap:7px}
-.dv-logo.badge-size .dv-mark{width:22px;height:22px;border-radius:5px}
-.dv-logo.badge-size .dv-mark::before{width:6px;height:2px;border-radius:0 5px 0 1px}
-.dv-logo.badge-size .dv-mark::after{width:2px;height:6px;border-radius:0 5px 0 1px}
-.dv-logo.badge-size .dv-mark span{font-size:12px;margin-top:1px}
-.dv-logo.badge-size .dv-wordmark{font-size:13px;color:white;font-weight:600}
+/* ─── DissolvA Logo Component (Brand v1.0 — 14 Apr 2026) ─── */
+.dv-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.dv-mark {
+  position: relative;
+  background: #003171;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Gold corner accent — top right */
+.dv-mark::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  border-radius: 0 8px 0 2px;
+}
+.dv-mark::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  border-radius: 0 8px 0 2px;
+}
+.dv-mark span {
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+.dv-wordmark {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.dv-wordmark .dv-a { font-weight: 500; color: var(--gold); }
+.dv-wordmark .dv-tm {
+  font-size: 0.5em;
+  vertical-align: super;
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* NAV size — 32px mark */
+.dv-logo.nav-size .dv-mark {
+  width: 32px; height: 32px;
+}
+.dv-logo.nav-size .dv-mark::before { width: 9px; height: 3px; }
+.dv-logo.nav-size .dv-mark::after  { width: 3px; height: 9px; }
+.dv-logo.nav-size .dv-mark span { font-size: 18px; margin-top: 1px; }
+.dv-logo.nav-size .dv-wordmark { font-size: 18px; color: white; }
+
+/* FOOTER size — 28px mark */
+.dv-logo.footer-size .dv-mark {
+  width: 28px; height: 28px; border-radius: 7px;
+}
+.dv-logo.footer-size .dv-mark::before { width: 8px; height: 2px; border-radius: 0 7px 0 2px; }
+.dv-logo.footer-size .dv-mark::after  { width: 2px; height: 8px; border-radius: 0 7px 0 2px; }
+.dv-logo.footer-size .dv-mark span { font-size: 16px; margin-top: 1px; }
+.dv-logo.footer-size .dv-wordmark { font-size: 18px; color: white; }
+
+/* SIDEBAR / APP-FRAME size — 24px mark */
+.dv-logo.sidebar-size .dv-mark {
+  width: 24px; height: 24px; border-radius: 6px;
+}
+.dv-logo.sidebar-size .dv-mark::before { width: 7px; height: 2px; border-radius: 0 6px 0 1px; }
+.dv-logo.sidebar-size .dv-mark::after  { width: 2px; height: 7px; border-radius: 0 6px 0 1px; }
+.dv-logo.sidebar-size .dv-mark span { font-size: 13px; margin-top: 1px; }
+.dv-logo.sidebar-size .dv-wordmark { font-size: 14px; color: white; }
+
+/* COMPARE TABLE badge size */
+.dv-logo.badge-size { gap: 7px; }
+.dv-logo.badge-size .dv-mark {
+  width: 22px; height: 22px; border-radius: 5px;
+}
+.dv-logo.badge-size .dv-mark::before { width: 6px; height: 2px; border-radius: 0 5px 0 1px; }
+.dv-logo.badge-size .dv-mark::after  { width: 2px; height: 6px; border-radius: 0 5px 0 1px; }
+.dv-logo.badge-size .dv-mark span { font-size: 12px; margin-top: 1px; }
+.dv-logo.badge-size .dv-wordmark { font-size: 13px; color: white; font-weight: 600; }
+
 </style>
 </head>
 <body>
@@ -227,9 +294,9 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   <a href="https://dissanalyze.streamlit.app" target="_blank" class="nav-cta">Launch App →</a>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-badge">Pharmaceutical Intelligence Platform</div>
+
   <h1>Dissolution Analysis,<br><span>Reimagined.</span></h1>
   <p>Professional-grade dissolution modeling, f2 similarity, and compliance engine — in one streamlined web platform. No installs, no macros.</p>
   <div class="btn-group">
@@ -240,11 +307,10 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
     <div class="stat"><div class="stat-n">62</div><div class="stat-l">Kinetic Models</div></div>
     <div class="stat"><div class="stat-n">FDA</div><div class="stat-l">Guideline Compliant</div></div>
     <div class="stat"><div class="stat-n">USP/EP</div><div class="stat-l">Monograph Engine</div></div>
-    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Validation Score</div></div>
+    <div class="stat"><div class="stat-n">Free</div><div class="stat-l">Core Features</div></div>
   </div>
 </section>
 
-<!-- ── SCREEN ── -->
 <section class="screen-section">
   <div class="section-inner">
     <div class="sec-label">Live Platform</div>
@@ -299,16 +365,16 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   </div>
 </section>
 
-<!-- ── VIDEO/SLIDES ── -->
-<section class="video-section" id="tutorial" style="background:var(--ox4);padding:80px 40px">
-  <div class="video-wrap" style="max-width:860px;margin:0 auto;text-align:center">
+<section class="video-section" id="tutorial">
+  <div class="video-wrap">
     <div class="sec-label" style="text-align:center">Platform Overview</div>
     <div class="sec-title" style="text-align:center">Watch how it works.</div>
     <div class="sec-sub" style="text-align:center;margin:8px auto 0;max-width:480px">Step-by-step walkthrough — from uploading your dissolution data to generating a regulatory-ready Excel report.</div>
-    <div style="background:transparent;border:none;border-radius:12px;overflow:hidden;margin-top:40px">
+
+    <div class="video-frame" style="background:transparent;border:none;border-radius:12px;overflow:hidden;margin-top:40px">
       <div id="dv-slides" style="position:relative;height:420px;overflow:hidden;background:#001428;border-radius:12px 12px 0 0">
 
-        <div class="dv-slide active" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;">
+        <div class="dv-slide active" style="position:absolute;inset:0;opacity:1;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
           <div style="text-align:center">
             <div style="position:relative;width:72px;height:72px;background:#003171;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px">
               <div style="position:absolute;top:0;right:0;width:18px;height:5px;background:#FFBF00;border-radius:0 16px 0 3px"></div>
@@ -325,7 +391,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
           </div>
         </div>
 
-        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;">
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
           <div style="width:100%;max-width:560px">
             <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:10px;text-align:center">f1 / f2 Similarity Analysis</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
@@ -337,7 +403,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
           </div>
         </div>
 
-        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;">
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
           <div style="text-align:center;width:100%;max-width:500px">
             <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:10px">Kinetic Model Library</div>
             <div style="font-size:80px;font-weight:800;color:#FFBF00;letter-spacing:-4px;line-height:1">62</div>
@@ -350,12 +416,14 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
               <div style="background:rgba(255,191,0,0.05);border:1px solid rgba(255,191,0,0.3);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,191,0,0.8);font-weight:500">Weibull</div>
               <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Hixson-Crowell</div>
               <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Baker-Lonsdale</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Hopfenberg</div>
+              <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">Peppas-Sahlin</div>
               <div style="background:rgba(0,49,113,0.5);border:1px solid rgba(255,191,0,0.1);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(232,224,208,0.6);font-weight:500">+ 52 more</div>
             </div>
           </div>
         </div>
 
-        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;">
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
           <div style="width:100%;max-width:520px">
             <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:12px;text-align:center">Regulatory Compliance Engine</div>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px">
@@ -369,7 +437,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
           </div>
         </div>
 
-        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;">
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
           <div style="width:100%;max-width:500px">
             <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:12px;text-align:center">Bootstrap f2 Analysis</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
@@ -380,7 +448,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
           </div>
         </div>
 
-        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;">
+        <div class="dv-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease;display:flex;align-items:center;justify-content:center;padding:40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
           <div style="text-align:center">
             <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.5);font-weight:600;margin-bottom:10px">Start today — free forever</div>
             <div style="font-size:28px;font-weight:700;color:white;letter-spacing:-0.5px;margin-bottom:8px;line-height:1.2">Ready to modernize your<br>dissolution workflow?</div>
@@ -391,17 +459,21 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         </div>
 
       </div>
+
       <div style="background:#000d1a;border-top:1px solid rgba(255,191,0,0.08);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-radius:0 0 12px 12px">
-        <div style="font-size:12px;color:rgba(232,224,208,0.4)">Dissolv<b style="color:rgba(255,191,0,0.7);font-weight:600">A</b>™ — Predictive Dissolution Suite</div>
+        <div style="font-size:12px;color:rgba(232,224,208,0.4);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Dissolv<b style="color:rgba(255,191,0,0.7);font-weight:600">A</b>™ — Predictive Dissolution Suite</div>
         <div id="dv-dots" style="display:flex;gap:6px;align-items:center"></div>
-        <div id="dv-timer" style="font-size:11px;color:rgba(232,224,208,0.25)">4s</div>
+        <div id="dv-timer" style="font-size:11px;color:rgba(232,224,208,0.25);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">4s</div>
       </div>
     </div>
+
     <script>
     (function(){
       var slides=document.querySelectorAll('#dv-slides .dv-slide');
-      var N=slides.length;var cur=0;var paused=false;var countdown=4;
-      var dotsEl=document.getElementById('dv-dots');var timerEl=document.getElementById('dv-timer');
+      var N=slides.length;
+      var cur=0;var paused=false;var countdown=4;
+      var dotsEl=document.getElementById('dv-dots');
+      var timerEl=document.getElementById('dv-timer');
       for(var i=0;i<N;i++){
         var d=document.createElement('button');
         d.style.cssText='width:6px;height:6px;border-radius:50%;background:rgba(255,191,0,0.2);cursor:pointer;transition:all 0.2s;border:none;padding:0';
@@ -410,40 +482,73 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         dotsEl.appendChild(d);
       }
       function goTo(n){
-        slides[cur].style.opacity='0';cur=(n+N)%N;slides[cur].style.opacity='1';
+        slides[cur].style.opacity='0';
+        cur=(n+N)%N;
+        slides[cur].style.opacity='1';
         var btns=dotsEl.querySelectorAll('button');
-        btns.forEach(function(b,i){b.style.width=i===cur?'18px':'6px';b.style.borderRadius=i===cur?'3px':'50%';b.style.background=i===cur?'#FFBF00':'rgba(255,191,0,0.2)';});
+        btns.forEach(function(b,i){
+          b.style.width=i===cur?'18px':'6px';
+          b.style.borderRadius=i===cur?'3px':'50%';
+          b.style.background=i===cur?'#FFBF00':'rgba(255,191,0,0.2)';
+        });
         countdown=4;timerEl.textContent='4s';
       }
-      setInterval(function(){if(paused)return;countdown--;timerEl.textContent=countdown+'s';if(countdown<=0){goTo(cur+1);}},1000);
+      setInterval(function(){
+        if(paused)return;
+        countdown--;timerEl.textContent=countdown+'s';
+        if(countdown<=0){goTo(cur+1);}
+      },1000);
       var frame=document.getElementById('dv-slides');
       frame.addEventListener('mouseenter',function(){paused=true;});
       frame.addEventListener('mouseleave',function(){paused=false;});
     })();
     </script>
+
   </div>
 </section>
 
-<!-- ── FEATURES ── -->
 <section class="features-section" id="features">
   <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-    <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:600;">Powered by AI</span>
-  </div>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+  <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);font-weight:600;">Powered by AI</span>
+</div>
   <div class="sec-label">Core Capabilities</div>
   <div class="sec-title">Everything you need<br>in one place.</div>
   <div class="sec-sub">From raw vessel data to regulatory-ready reports — no Excel macros, no local installs required.</div>
   <div class="feat-grid">
-    <div class="feat-card"><div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="feat-title">Intelligent Compliance Engine</div><div class="feat-desc">USP/FDA monograph compliance verified at Q-time via interpolation. Instant OOS flagging with academic root-cause analysis and ICH Q6A recommendations.</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="feat-title">f1 / f2 Similarity Analysis</div><div class="feat-desc">FDA-compliant f1 and f2 calculation with 85% cutoff, Q-value and Q-time overlays, error bars, and automatic boundary-zone warnings when f2 is in the 45–55 range.</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div class="feat-title">62 Kinetic Models</div><div class="feat-desc">Zero-order to Gompertz, Weibull variants, sigmoid, burst-release, and fractal models. More models than DDSolver (40), KinetDS (15), or RKinetDS (36).</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><div class="feat-title">Excel Report Engine</div><div class="feat-desc">8-sheet professional reports with logo upload, project metadata, bootstrap results, dissolution charts, and similarity reports — all generated in one click.</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="feat-title">Smart Profile Management</div><div class="feat-desc">Session persistence across all pages. Profile renaming syncs globally across all analyses. Project metadata — name, analyst, description — flows into report headers automatically.</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="feat-title">Statistical Analysis</div><div class="feat-desc">MDT, DE, pooled statistics, per-profile tables with SD/RSD. Individual profile plots with error bars, Q-line overlays, and USP acceptance criterion annotation.</div></div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="feat-title">Intelligent Compliance Engine</div>
+      <div class="feat-desc">USP/FDA monograph compliance verified at Q-time via interpolation. Instant OOS flagging with academic root-cause analysis and ICH Q6A recommendations.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div class="feat-title">f1 / f2 Similarity Analysis</div>
+      <div class="feat-desc">FDA-compliant f1 and f2 calculation with 85% cutoff, Q-value and Q-time overlays, error bars, and automatic boundary-zone warnings when f2 is in the 45–55 range.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+      <div class="feat-title">62 Kinetic Models</div>
+      <div class="feat-desc">Zero-order to Gompertz, Weibull variants, sigmoid, burst-release, and fractal models. More models than DDSolver (40), KinetDS (15), or RKinetDS (36).</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+      <div class="feat-title">Excel Report Engine</div>
+      <div class="feat-desc">8-sheet professional reports with logo upload, project metadata, bootstrap results, dissolution charts, and similarity reports — all generated in one click.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="feat-title">Smart Profile Management</div>
+      <div class="feat-desc">Session persistence across all pages. Profile renaming syncs globally across all analyses. Project metadata — name, analyst, description — flows into report headers automatically.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="feat-title">Statistical Analysis</div>
+      <div class="feat-desc">MDT, DE, pooled statistics, per-profile tables with SD/RSD. Individual profile plots with error bars, Q-line overlays, and USP acceptance criterion annotation.</div>
+    </div>
   </div>
 </section>
 
-<!-- ── MODULES ── -->
 <section class="mod-section">
   <div class="mod-inner">
     <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(255,191,0,0.06);border:1px solid rgba(255,191,0,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
@@ -454,17 +559,87 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
     <div style="font-size:clamp(24px,3vw,38px);font-weight:800;color:white;letter-spacing:-1px;margin-bottom:8px">62 Kinetic Models — by Category</div>
     <div style="font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:40px">From zero-order to fractal kinetics — the most comprehensive dissolution model library available in any web-based platform.</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Basic</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">18 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">Zero Order · First Order · Higuchi · Hixson-Crowell · Korsmeyer-Peppas · Hopfenberg · Baker-Lonsdale · Makoid-Banakar · Peppas-Sahlin (1&2) · Weibull · Gompertz · Logistic · Quadratic · Probit · 2nd/3rd Order · Michaelis-Menten</div></div>
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Sigmoid</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">11 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">Hill Equation · Richards · Modified Gompertz · Log-Normal · 4-Parameter Logistic · Dose-Response · Logistic 1&2 (DDSolver) · Gompertz 1&2 (DDSolver) · Probit 1 (DDSolver)</div></div>
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Empirical</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">11 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">Exponential Assoc. · Hyperbolic · Brody Growth · Bertalanffy · Pade · hPLC · Compreg · KP Modified · Makoid-Banakar Mod. · Linear-Exp. · Weibull-Sigmoid</div></div>
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Multi-Phase</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">7 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">Double Exponential · Triple Exponential · Power-Exponential · Biexponential Absorption · Gallagher-Corrigan · Combined Higuchi+FO · Henriksen</div></div>
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Lag-Time</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">7 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">KP + Lag · First Order + Lag · Zero Order + Lag · Higuchi + Lag · Weibull (No Lag) · Hixson-Crowell + Lag · Probit Log</div></div>
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Burst Release</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">5 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">Zero Order + F0 · First Order + Fmax · First Order + Tlag + Fmax · Higuchi + F0 · KP + F0</div></div>
-      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:white">Fractal</div><div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">3 models</div></div><div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">Fractal First Order · Stretched Exponential · Fractal Weibull</div></div>
-      <div style="background:rgba(255,191,0,0.06);border:2px solid rgba(255,191,0,0.3);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div style="font-size:48px;font-weight:800;color:var(--gold);letter-spacing:-2px;line-height:1">62</div><div style="font-size:14px;color:rgba(232,224,208,0.6);margin-top:6px">Total Models</div><div style="font-size:12px;color:rgba(232,224,208,0.35);margin-top:8px;line-height:1.6">More than DDSolver (40),<br>KinetDS (~15) & RKinetDS (36)<br>combined</div></div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Basic</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">18 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Zero Order · First Order · Higuchi · Hixson-Crowell · Korsmeyer-Peppas · Hopfenberg · Baker-Lonsdale · Makoid-Banakar · Peppas-Sahlin (1&2) · Weibull · Gompertz · Logistic · Quadratic · Probit · 2nd/3rd Order · Michaelis-Menten
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Sigmoid</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">11 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Hill Equation · Richards · Modified Gompertz · Log-Normal · 4-Parameter Logistic · Dose-Response · Logistic 1&2 (DDSolver) · Gompertz 1&2 (DDSolver) · Probit 1 (DDSolver)
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Empirical</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">11 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Exponential Assoc. · Hyperbolic · Brody Growth · Bertalanffy · Pade · hPLC · Compreg · KP Modified · Makoid-Banakar Mod. · Linear-Exp. · Weibull-Sigmoid
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Multi-Phase</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">7 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Double Exponential · Triple Exponential · Power-Exponential · Biexponential Absorption · Gallagher-Corrigan · Combined Higuchi+FO · Henriksen
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Lag-Time</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">7 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          KP + Lag · First Order + Lag · Zero Order + Lag · Higuchi + Lag · Weibull (No Lag) · Hixson-Crowell + Lag · Probit Log
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Burst Release</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">5 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Zero Order + F0 · First Order + Fmax · First Order + Tlag + Fmax · Higuchi + F0 · KP + F0
+        </div>
+      </div>
+
+      <div style="background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:12px;padding:20px 22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <div style="font-size:14px;font-weight:700;color:white">Fractal</div>
+          <div style="background:rgba(255,191,0,0.12);color:var(--gold);font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;border:1px solid rgba(255,191,0,0.2)">3 models</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--text-muted);line-height:1.9">
+          Fractal First Order · Stretched Exponential · Fractal Weibull
+        </div>
+      </div>
+
+      <div style="background:rgba(255,191,0,0.06);border:2px solid rgba(255,191,0,0.3);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-size:48px;font-weight:800;color:var(--gold);letter-spacing:-2px;line-height:1">62</div>
+        <div style="font-size:14px;color:rgba(232,224,208,0.6);margin-top:6px">Total Models</div>
+        <div style="font-size:12px;color:rgba(232,224,208,0.35);margin-top:8px;line-height:1.6">More than DDSolver (40),<br>KinetDS (~15) & RKinetDS (36)<br>combined</div>
+      </div>
+
     </div>
   </div>
-  <div class="mod-inner" style="margin-top:60px">
+</section>
+  <div class="mod-inner">
     <div class="sec-label" style="color:var(--gold)">Analysis Modules</div>
     <div class="sec-title" style="color:white">Everything works together.</div>
     <div class="sec-sub" style="margin-bottom:40px">Each module shares the same data session — switch between pages without losing your work.</div>
@@ -483,21 +658,16 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 
 <!-- ════════════════════════════════════════════════
      YENİ BÖLÜM: SCIENTİFİCALLY VALIDATED
-     Compare'den hemen önce, aynı temada
      ════════════════════════════════════════════════ -->
 <section class="val-section" id="validation" style="background:var(--ox4)">
   <div class="val-inner">
-
     <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(76,175,130,0.06);border:1px solid rgba(76,175,130,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4caf82" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(76,175,130,0.8);font-weight:600;">Scientifically Validated</span>
     </div>
-
     <div class="sec-label">Peer-Reviewed Accuracy</div>
     <div class="sec-title">We don't just claim it.<br>We <span style="color:var(--gold)">prove</span> it.</div>
     <div class="sec-sub">DissolvA's calculation engine was tested against published reference values from DDSolver and RKinetDS — the gold standard tools in pharmaceutical dissolution science.</div>
-
-    <!-- Skor Banner -->
     <div class="val-score-banner">
       <div>
         <div class="val-score-num">100%</div>
@@ -515,24 +685,15 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         </div>
       </div>
     </div>
-
-    <!-- Karşılaştırma Kartları -->
     <div class="val-cards">
-
-      <!-- Kart 1: First-Order -->
       <div class="val-card">
         <div class="val-card-head">
-          <div>
-            <div class="val-card-ref">Castro et al. — Albendazole Tablet (Product A)</div>
-            <div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Table 3</div>
-          </div>
+          <div><div class="val-card-ref">Castro et al. — Albendazole Tablet (Product A)</div><div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Table 3</div></div>
           <div class="val-card-tag">First-Order</div>
         </div>
         <div class="val-card-body">
           <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div>
-            <div class="val-compare-head">Published</div>
-            <div class="val-compare-head">DissolvA</div>
+            <div class="val-compare-head">Parameter</div><div class="val-compare-head">Published</div><div class="val-compare-head">DissolvA</div>
             <div class="val-compare-cell"><div class="val-param">Rate K₁</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
             <div class="val-compare-cell"><div class="val-param">K₁</div><div class="val-val ref">0.143</div></div>
             <div class="val-compare-cell"><div class="val-param">K₁</div><div class="val-val dissolva">0.145</div></div>
@@ -540,27 +701,17 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
             <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val ref">0.9991</div></div>
             <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val dissolva">0.9991</div></div>
           </div>
-          <div class="val-match">
-            <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-            Match confirmed — K₁ and R² align with literature
-          </div>
+          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Match confirmed — K₁ and R² align with literature</div>
         </div>
       </div>
-
-      <!-- Kart 2: Weibull -->
       <div class="val-card">
         <div class="val-card-head">
-          <div>
-            <div class="val-card-ref">Castro et al. — Albendazole Tablet (Product A)</div>
-            <div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Table 3</div>
-          </div>
+          <div><div class="val-card-ref">Castro et al. — Albendazole Tablet (Product A)</div><div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Table 3</div></div>
           <div class="val-card-tag">Weibull</div>
         </div>
         <div class="val-card-body">
           <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div>
-            <div class="val-compare-head">Published</div>
-            <div class="val-compare-head">DissolvA</div>
+            <div class="val-compare-head">Parameter</div><div class="val-compare-head">Published</div><div class="val-compare-head">DissolvA</div>
             <div class="val-compare-cell"><div class="val-param">Shape β</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
             <div class="val-compare-cell"><div class="val-param">β</div><div class="val-val ref">0.6238</div></div>
             <div class="val-compare-cell"><div class="val-param">β</div><div class="val-val dissolva">0.8138</div></div>
@@ -568,28 +719,18 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
             <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val ref">0.9998</div></div>
             <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val dissolva">0.9999</div></div>
           </div>
-          <div class="val-match">
-            <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-            Match confirmed — R² near-perfect at 0.9999
-          </div>
-          <div class="val-note">β offset expected — different Weibull variant (with/without T<sub>lag</sub>). RKinetDS reported identical offset (β = 0.8146).</div>
+          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Match confirmed — R² near-perfect at 0.9999</div>
+          <div class="val-note">β offset expected — different Weibull variant. RKinetDS reported identical offset (β = 0.8146).</div>
         </div>
       </div>
-
-      <!-- Kart 3: f2 -->
       <div class="val-card">
         <div class="val-card-head">
-          <div>
-            <div class="val-card-ref">Zhang et al. — DDSolver Profile Comparison Example</div>
-            <div class="val-card-ref-sub">Zhang et al. (2010) AAPS J. · BioMed Res Int (2014)</div>
-          </div>
+          <div><div class="val-card-ref">Zhang et al. — DDSolver Profile Comparison Example</div><div class="val-card-ref-sub">Zhang et al. (2010) AAPS J. · BioMed Res Int (2014)</div></div>
           <div class="val-card-tag">f2 Similarity</div>
         </div>
         <div class="val-card-body">
           <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div>
-            <div class="val-compare-head">DDSolver</div>
-            <div class="val-compare-head">DissolvA</div>
+            <div class="val-compare-head">Parameter</div><div class="val-compare-head">DDSolver</div><div class="val-compare-head">DissolvA</div>
             <div class="val-compare-cell"><div class="val-param">Similarity</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
             <div class="val-compare-cell"><div class="val-param">f2</div><div class="val-val ref">23.21</div></div>
             <div class="val-compare-cell"><div class="val-param">f2</div><div class="val-val dissolva">23.2119</div></div>
@@ -597,27 +738,17 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
             <div class="val-compare-cell"><div class="val-param">Result</div><div class="val-val ref" style="font-size:11px">Not similar</div></div>
             <div class="val-compare-cell"><div class="val-param">Result</div><div class="val-val dissolva" style="font-size:11px">Not similar</div></div>
           </div>
-          <div class="val-match">
-            <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-            Perfect match — f2 = 23.2119 vs expected 23.21
-          </div>
+          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Perfect match — f2 = 23.2119 vs expected 23.21</div>
         </div>
       </div>
-
-      <!-- Kart 4: Korsmeyer-Peppas -->
       <div class="val-card">
         <div class="val-card-head">
-          <div>
-            <div class="val-card-ref">Murtaza et al. — Cefixime Microspheres (Formulation 5)</div>
-            <div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Korsmeyer-Peppas</div>
-          </div>
+          <div><div class="val-card-ref">Murtaza et al. — Cefixime Microspheres (Formulation 5)</div><div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Korsmeyer-Peppas</div></div>
           <div class="val-card-tag">Korsmeyer-Peppas</div>
         </div>
         <div class="val-card-body">
           <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div>
-            <div class="val-compare-head">Published</div>
-            <div class="val-compare-head">DissolvA</div>
+            <div class="val-compare-head">Parameter</div><div class="val-compare-head">Published</div><div class="val-compare-head">DissolvA</div>
             <div class="val-compare-cell"><div class="val-param">Release exp. n</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
             <div class="val-compare-cell"><div class="val-param">n</div><div class="val-val ref">0.487</div></div>
             <div class="val-compare-cell"><div class="val-param">n</div><div class="val-val dissolva">0.443</div></div>
@@ -625,65 +756,20 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
             <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val ref">0.9891</div></div>
             <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val dissolva">0.9983</div></div>
           </div>
-          <div class="val-match">
-            <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-            Match confirmed — n &lt; 0.45: Fickian diffusion verified
-          </div>
+          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Match confirmed — n &lt; 0.45: Fickian diffusion verified</div>
         </div>
       </div>
-
     </div>
-
-    <!-- Literatür Referans Listesi -->
     <div class="sec-label" style="margin-top:56px;margin-bottom:16px">Literature Used in Validation</div>
     <div class="val-ref-list">
-      <div class="val-ref-item">
-        <div class="val-ref-num">1</div>
-        <div class="val-ref-text">
-          <div class="val-ref-authors">Mendyk, A. et al. — RKinetDS: A Modern R-Based Tool for Dissolution Modeling</div>
-          <div class="val-ref-journal">Dissolution Technologies, Feb 2026 · doi:10.14227/DT330126P20</div>
-        </div>
-        <div class="val-ref-badge">Validation source</div>
-      </div>
-      <div class="val-ref-item">
-        <div class="val-ref-num">2</div>
-        <div class="val-ref-text">
-          <div class="val-ref-authors">Zhang, Y. et al. — DDSolver: An Add-in Program for Modeling and Comparison of Drug Dissolution Profiles</div>
-          <div class="val-ref-journal">AAPS Journal, 2010; 12(3): 263–271 · doi:10.1208/s12248-010-9185-1</div>
-        </div>
-        <div class="val-ref-badge">Validation source</div>
-      </div>
-      <div class="val-ref-item">
-        <div class="val-ref-num">3</div>
-        <div class="val-ref-text">
-          <div class="val-ref-authors">Zuo, J. et al. — Evaluation of the DDSolver Software Applications</div>
-          <div class="val-ref-journal">BioMed Research International, 2014 · doi:10.1155/2014/204925</div>
-        </div>
-        <div class="val-ref-badge">f2 reference data</div>
-      </div>
-      <div class="val-ref-item">
-        <div class="val-ref-num">4</div>
-        <div class="val-ref-text">
-          <div class="val-ref-authors">Ramteke, K.H. et al. — Mathematical Models of Drug Dissolution: A Review</div>
-          <div class="val-ref-journal">Scholars Academic Journal of Pharmacy, 2014; 3(5): 388–396</div>
-        </div>
-        <div class="val-ref-badge">Model theory</div>
-      </div>
-      <div class="val-ref-item">
-        <div class="val-ref-num">5</div>
-        <div class="val-ref-text">
-          <div class="val-ref-authors">Gao, Y. et al. — Dissolution Kinetics of a BCS Class II API: Diffusion-Based Model Validation</div>
-          <div class="val-ref-journal">ACS Omega, 2021; 6: 8056–8067 · doi:10.1021/acsomega.0c05558</div>
-        </div>
-        <div class="val-ref-badge">Diffusion model</div>
-      </div>
+      <div class="val-ref-item"><div class="val-ref-num">1</div><div class="val-ref-text"><div class="val-ref-authors">Mendyk, A. et al. — RKinetDS: A Modern R-Based Tool for Dissolution Modeling</div><div class="val-ref-journal">Dissolution Technologies, Feb 2026 · doi:10.14227/DT330126P20</div></div><div class="val-ref-badge">Validation source</div></div>
+      <div class="val-ref-item"><div class="val-ref-num">2</div><div class="val-ref-text"><div class="val-ref-authors">Zhang, Y. et al. — DDSolver: An Add-in Program for Modeling and Comparison of Drug Dissolution Profiles</div><div class="val-ref-journal">AAPS Journal, 2010; 12(3): 263–271 · doi:10.1208/s12248-010-9185-1</div></div><div class="val-ref-badge">Validation source</div></div>
+      <div class="val-ref-item"><div class="val-ref-num">3</div><div class="val-ref-text"><div class="val-ref-authors">Zuo, J. et al. — Evaluation of the DDSolver Software Applications</div><div class="val-ref-journal">BioMed Research International, 2014 · doi:10.1155/2014/204925</div></div><div class="val-ref-badge">f2 reference data</div></div>
+      <div class="val-ref-item"><div class="val-ref-num">4</div><div class="val-ref-text"><div class="val-ref-authors">Ramteke, K.H. et al. — Mathematical Models of Drug Dissolution: A Review</div><div class="val-ref-journal">Scholars Academic Journal of Pharmacy, 2014; 3(5): 388–396</div></div><div class="val-ref-badge">Model theory</div></div>
+      <div class="val-ref-item"><div class="val-ref-num">5</div><div class="val-ref-text"><div class="val-ref-authors">Gao, Y. et al. — Dissolution Kinetics of a BCS Class II API: Diffusion-Based Model Validation</div><div class="val-ref-journal">ACS Omega, 2021; 6: 8056–8067 · doi:10.1021/acsomega.0c05558</div></div><div class="val-ref-badge">Diffusion model</div></div>
     </div>
-
   </div>
 </section>
-<!-- ═══════════════════════════════════════════════════ -->
-
-<!-- ── COMPARE ── -->
 <section class="compare-section" id="compare">
   <div class="compare-inner">
     <div class="sec-label">Comparison</div>
@@ -711,7 +797,6 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         <tr><td>Bootstrap f2</td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
         <tr><td>USP Compliance Engine</td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
         <tr><td>Excel Report Export</td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
-        <tr><td>Peer-reviewed validation</td><td><span class="ck">✓</span></td><td><span class="cx">—</span></td><td><span class="ck">✓</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
         <tr><td>Free to use</td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
         <tr><td>Error bars & SD bands</td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td><span class="cx">—</span></td><td class="col-hl"><span class="ck">✓</span></td></tr>
       </tbody>
@@ -728,7 +813,6 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ── -->
 <section class="quote-section" style="padding:80px 40px">
 <style>
 .tc-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,191,0,0.7);margin-bottom:8px;font-weight:600;text-align:center}
@@ -752,48 +836,167 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 @media(max-width:768px){.tc-card{flex:0 0 calc(50% - 8px)}}
 @media(max-width:480px){.tc-card{flex:0 0 100%}}
 </style>
+
   <div class="tc-label">User Reviews</div>
   <div class="tc-title">Trusted by pharmaceutical researchers</div>
+
   <div class="tc-viewport" id="tc-vp">
     <div class="tc-track" id="tc-track">
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(0,49,113,0.8);color:var(--gold)">MSK</div><div><p class="tc-name">M. Sinan KAYNAK, PhD</p><p class="tc-role">Anadolu University, Faculty of Pharmacy</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"DissolvA brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(15,110,86,0.3);color:#4caf82">AY</div><div><p class="tc-name">Ayşe Yılmaz, PhD</p><p class="tc-role">Hacettepe University, Pharmaceutical Technology</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"Bootstrap f2 analizi için artık ayrı bir yazılıma ihtiyaç duymuyorum. DissolvA ile tüm süreç tek platformda tamamlanıyor, hem hızlı hem güvenilir."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(83,74,183,0.25);color:#a99ef5">RK</div><div><p class="tc-name">Rahul Krishnamurthy</p><p class="tc-role">Senior Formulation Scientist, Mumbai</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"The 62-model kinetic library is unmatched. I switched from DDSolver after the first session. The Excel report output alone saves me hours each week."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(133,79,11,0.3);color:#f5a623">MB</div><div><p class="tc-name">Marta Borkowska</p><p class="tc-role">Regulatory Affairs, Warsaw Pharma CRO</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"FDA and EMA compliance checks in one click. The USP monograph engine flagged an OOS result our team had missed. This tool has real regulatory depth."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(59,109,17,0.3);color:#7bc744">JL</div><div><p class="tc-name">Jian Li, PhD</p><p class="tc-role">R&D, Shenyang Pharmaceutical University</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"We use DissolvA for IVIVC preparatory work across multiple BCS Class II projects. The profile management and SD band visualizations are exceptional."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(153,60,29,0.3);color:#e88060">EO</div><div><p class="tc-name">Emeka Okafor</p><p class="tc-role">Bioequivalence Analyst, Lagos</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"No install, no macro, no Excel version compatibility issues. Just open the browser and analyze. DissolvA is exactly what dissolution science needed."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(153,53,86,0.3);color:#e88aaa">SN</div><div><p class="tc-name">Sofia Navarro, MSc</p><p class="tc-role">PhD Candidate, Universidad de Barcelona</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"As a PhD student I needed a tool that matched academic rigor. DissolvA cites the correct FDA and EMA guidance at every step — I can trust the output in my thesis."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(12,68,124,0.35);color:#78aee8">TW</div><div><p class="tc-name">Thomas Weber</p><p class="tc-role">QA Lead, Swiss Generics Manufacturer</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"The nonparametric bootstrap f2 with Shah 1998 methodology gives us the statistical confidence our QA submissions require. This is serious pharmaceutical software."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(8,80,65,0.3);color:#4caf82">PR</div><div><p class="tc-name">Priya Rajan, PhD</p><p class="tc-role">Formulation Scientist, Bangalore</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"Switched from DDSolver six months ago. The smart model recommendation feature alone saved my team dozens of hours of trial-and-error fitting. Remarkable tool."</p></div>
-      <div class="tc-card"><div class="tc-top"><div class="tc-avatar" style="background:rgba(60,52,137,0.3);color:#a99ef5">KM</div><div><p class="tc-name">Kenji Matsuda</p><p class="tc-role">Dissolution Lab Manager, Osaka</p></div></div><div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div><p class="tc-text">"Our dissolution lab adopted DissolvA as the standard reporting tool. The branded Excel export with professional charts is exactly what our clients expect."</p></div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(0,49,113,0.8);color:var(--gold)">MSK</div>
+          <div><p class="tc-name">M. Sinan KAYNAK, PhD</p><p class="tc-role">DissolvA Platform Lead</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"DissolvA brings together everything pharmaceutical scientists need — kinetic modeling, regulatory compliance, and professional reporting — in a single, elegant web platform."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(15,110,86,0.3);color:#4caf82">AY</div>
+          <div><p class="tc-name">Ayşe Yılmaz, PhD</p><p class="tc-role">Hacettepe University, Pharmaceutical Technology</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"Bootstrap f2 analizi için artık ayrı bir yazılıma ihtiyaç duymuyorum. DissolvA ile tüm süreç tek platformda tamamlanıyor, hem hızlı hem güvenilir."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(83,74,183,0.25);color:#a99ef5">RK</div>
+          <div><p class="tc-name">Rahul Krishnamurthy</p><p class="tc-role">Senior Formulation Scientist, Mumbai</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"The 62-model kinetic library is unmatched. I switched from DDSolver after the first session. The Excel report output alone saves me hours each week."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(133,79,11,0.3);color:#f5a623">MB</div>
+          <div><p class="tc-name">Marta Borkowska</p><p class="tc-role">Regulatory Affairs, Warsaw Pharma CRO</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"FDA and EMA compliance checks in one click. The USP monograph engine flagged an OOS result our team had missed. This tool has real regulatory depth."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(59,109,17,0.3);color:#7bc744">JL</div>
+          <div><p class="tc-name">Jian Li, PhD</p><p class="tc-role">R&D, Shenyang Pharmaceutical University</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"We use DissolvA for IVIVC preparatory work across multiple BCS Class II projects. The profile management and SD band visualizations are exceptional."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(153,60,29,0.3);color:#e88060">EO</div>
+          <div><p class="tc-name">Emeka Okafor</p><p class="tc-role">Bioequivalence Analyst, Lagos</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"No install, no macro, no Excel version compatibility issues. Just open the browser and analyze. DissolvA is exactly what dissolution science needed."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(153,53,86,0.3);color:#e88aaa">SN</div>
+          <div><p class="tc-name">Sofia Navarro, MSc</p><p class="tc-role">PhD Candidate, Universidad de Barcelona</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"As a PhD student I needed a tool that matched academic rigor. DissolvA cites the correct FDA and EMA guidance at every step — I can trust the output in my thesis."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(12,68,124,0.35);color:#78aee8">TW</div>
+          <div><p class="tc-name">Thomas Weber</p><p class="tc-role">QA Lead, Swiss Generics Manufacturer</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"The nonparametric bootstrap f2 with Shah 1998 methodology gives us the statistical confidence our QA submissions require. This is serious pharmaceutical software."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(8,80,65,0.3);color:#4caf82">PR</div>
+          <div><p class="tc-name">Priya Rajan, PhD</p><p class="tc-role">Formulation Scientist, Bangalore</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"Switched from DDSolver six months ago. The smart model recommendation feature alone saved my team dozens of hours of trial-and-error fitting. Remarkable tool."</p>
+      </div>
+
+      <div class="tc-card">
+        <div class="tc-top">
+          <div class="tc-avatar" style="background:rgba(60,52,137,0.3);color:#a99ef5">KM</div>
+          <div><p class="tc-name">Kenji Matsuda</p><p class="tc-role">Dissolution Lab Manager, Osaka</p></div>
+        </div>
+        <div class="tc-stars"><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span><span class="tc-star">★</span></div>
+        <p class="tc-text">"Our dissolution lab adopted DissolvA as the standard reporting tool. The branded Excel export with professional charts is exactly what our clients expect."</p>
+      </div>
+
     </div>
   </div>
+
   <div class="tc-controls">
     <button class="tc-btn" id="tc-prev">&#8592;</button>
     <div class="tc-dots" id="tc-dots"></div>
     <button class="tc-btn" id="tc-next">&#8594;</button>
   </div>
+
 <script>
 (function(){
-  var track=document.getElementById('tc-track');var vp=document.getElementById('tc-vp');
-  var dotsEl=document.getElementById('tc-dots');var cards=track.querySelectorAll('.tc-card');
-  var N=cards.length;var cur=0;var paused=false;
+  var track=document.getElementById('tc-track');
+  var vp=document.getElementById('tc-vp');
+  var dotsEl=document.getElementById('tc-dots');
+  var cards=track.querySelectorAll('.tc-card');
+  var N=cards.length;
+  var cur=0;var paused=false;
+
   function pv(){return vp.offsetWidth<480?1:vp.offsetWidth<768?2:3;}
   function ts(){return N-pv()+1;}
-  function buildDots(){dotsEl.innerHTML='';for(var i=0;i<ts();i++){var d=document.createElement('div');d.className='tc-dot'+(i===cur?' on':'');(function(idx){d.onclick=function(){goTo(idx);};})(i);dotsEl.appendChild(d);}}
-  function goTo(i){var max=ts()-1;cur=i<0?0:i>max?max:i;var cw=cards[0].getBoundingClientRect().width+16;track.style.transform='translateX(-'+(cur*cw)+'px)';dotsEl.querySelectorAll('.tc-dot').forEach(function(d,j){d.className='tc-dot'+(j===cur?' on':'');});}
-  function setup(){var p=pv();cards.forEach(function(c){if(p===1)c.style.flex='0 0 100%';else if(p===2)c.style.flex='0 0 calc(50% - 8px)';else c.style.flex='0 0 calc(33.333% - 11px)';});cur=Math.min(cur,ts()-1);buildDots();goTo(cur);}
+
+  function buildDots(){
+    dotsEl.innerHTML='';
+    for(var i=0;i<ts();i++){
+      var d=document.createElement('div');
+      d.className='tc-dot'+(i===cur?' on':'');
+      (function(idx){d.onclick=function(){goTo(idx);};})(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(i){
+    var max=ts()-1;
+    cur=i<0?0:i>max?max:i;
+    var cw=cards[0].getBoundingClientRect().width+16;
+    track.style.transform='translateX(-'+(cur*cw)+'px)';
+    dotsEl.querySelectorAll('.tc-dot').forEach(function(d,j){
+      d.className='tc-dot'+(j===cur?' on':'');
+    });
+  }
+
+  function setup(){
+    var p=pv();
+    cards.forEach(function(c){
+      if(p===1)c.style.flex='0 0 100%';
+      else if(p===2)c.style.flex='0 0 calc(50% - 8px)';
+      else c.style.flex='0 0 calc(33.333% - 11px)';
+    });
+    cur=Math.min(cur,ts()-1);
+    buildDots();goTo(cur);
+  }
+
   document.getElementById('tc-next').onclick=function(){goTo(cur+1<ts()?cur+1:0);};
   document.getElementById('tc-prev').onclick=function(){goTo(cur-1>=0?cur-1:ts()-1);};
-  vp.addEventListener('mouseenter',function(){paused=true;});vp.addEventListener('mouseleave',function(){paused=false;});
+  vp.addEventListener('mouseenter',function(){paused=true;});
+  vp.addEventListener('mouseleave',function(){paused=false;});
   setInterval(function(){if(!paused)goTo(cur+1<ts()?cur+1:0);},4000);
-  window.addEventListener('resize',setup);setup();
+  window.addEventListener('resize',setup);
+  setup();
 })();
 </script>
 </section>
 
-<!-- ── PRICING ── -->
-<section id="pricing" style="background:var(--ox4);padding:80px 40px">
+<section class="pricing-section" id="pricing" style="background:var(--ox4);padding:80px 40px">
 <style>
 .pw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
 .pw-card{border-radius:14px;padding:28px 24px;position:relative;display:flex;flex-direction:column;box-sizing:border-box}
@@ -828,12 +1031,15 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 .pw-beta-note{font-size:10px;color:rgba(255,191,0,0.35);text-align:center;margin-top:8px;font-style:italic}
 @media(max-width:768px){.pw-grid{grid-template-columns:1fr}}
 </style>
+
   <div style="text-align:center;margin-bottom:52px">
     <div class="sec-label" style="color:var(--gold)">Pricing</div>
     <div class="sec-title" style="color:white">Start free. Scale as you grow.</div>
     <div style="font-size:15px;color:var(--text-muted);max-width:520px;margin:10px auto 0;line-height:1.75">All plans free during beta. Founding members lock in early access pricing — forever.</div>
   </div>
+
   <div class="pw-grid">
+
     <div class="pw-card pw-core">
       <div class="pw-plan">Core</div>
       <div class="pw-price">$0</div>
@@ -848,6 +1054,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
       </ul>
       <a href="https://dissanalyze.streamlit.app" target="_blank" class="pw-btn pw-btn-core">Get Started Free →</a>
     </div>
+
     <div class="pw-card pw-research">
       <div class="pw-badge pw-badge-beta">Beta — Free Now</div>
       <div class="pw-plan gold">Research</div>
@@ -866,6 +1073,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
       <a href="https://tally.so/r/44oM55" target="_blank" class="pw-btn pw-btn-research">Join Research Beta →</a>
       <div class="pw-beta-note">Free during beta · Price locks at launch</div>
     </div>
+
     <div class="pw-card pw-pro">
       <div class="pw-badge pw-badge-pop">Most Popular</div>
       <div class="pw-plan gold">Pro</div>
@@ -892,24 +1100,34 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
       <a href="https://tally.so/r/44oM55" target="_blank" class="pw-btn pw-btn-pro">Join Pro Beta →</a>
       <div class="pw-beta-note">Free during beta · Founding price locked at launch</div>
     </div>
+
   </div>
+
 </section>
 
-<!-- ── CTA ── -->
-<section style="background:var(--gold);padding:72px 40px;text-align:center">
+<section class="cta-section" style="background:var(--gold);padding:72px 40px;text-align:center">
   <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;background:rgba(0,17,42,0.08);border:1px solid rgba(0,17,42,0.18);border-radius:999px;padding:6px 18px 6px 14px;">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00112a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
     <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#00112a;font-weight:700;">Free to use · No install required</span>
   </div>
   <h2 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#00112a;letter-spacing:-1px;margin:0 0 14px;line-height:1.1;">Ready to modernize your<br>dissolution workflow?</h2>
-  <p style="font-size:17px;color:rgba(0,17,42,0.62);margin:0 auto 36px;max-width:480px;line-height:1.75;">Join researchers worldwide using <span style="display:inline-flex;align-items:center;background:#00112a;border-radius:6px;padding:2px 10px;vertical-align:middle;position:relative;top:-1px;"><span style="color:white;font-weight:500;font-size:15px;">Dissolv</span><span style="color:var(--gold);font-weight:700;font-size:15px;">A</span><span style="color:rgba(255,255,255,0.45);font-size:10px;vertical-align:super;font-weight:400;">™</span></span> for FDA-compliant dissolution analysis.</p>
+  <p style="font-size:17px;color:rgba(0,17,42,0.62);margin:0 auto 36px;max-width:480px;line-height:1.75;">
+    Join researchers worldwide using
+    <span style="display:inline-flex;align-items:center;background:#00112a;border-radius:6px;padding:2px 10px;vertical-align:middle;position:relative;top:-1px;">
+      <span style="color:white;font-weight:500;font-size:15px;">Dissolv</span><span style="color:var(--gold);font-weight:700;font-size:15px;">A</span><span style="color:rgba(255,255,255,0.45);font-size:10px;vertical-align:super;font-weight:400;">™</span>
+    </span>
+    for FDA-compliant dissolution analysis.
+  </p>
   <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-    <a href="https://dissanalyze.streamlit.app" target="_blank" style="background:#00112a;color:white;font-size:15px;font-weight:700;padding:16px 36px;border-radius:11px;text-decoration:none;display:inline-block;">Launch Dissolv<span style="color:var(--gold);font-weight:700;">A</span>™ Free →</a>
-    <a href="#tutorial" style="background:transparent;color:#00112a;font-size:15px;font-weight:600;padding:16px 36px;border-radius:11px;text-decoration:none;display:inline-block;border:1.5px solid rgba(0,17,42,0.25);">Watch Tutorial</a>
+    <a href="https://dissanalyze.streamlit.app" target="_blank" style="background:#00112a;color:white;font-size:15px;font-weight:700;padding:16px 36px;border-radius:11px;text-decoration:none;display:inline-block;">
+      Launch Dissolv<span style="color:var(--gold);font-weight:700;">A</span>™ Free →
+    </a>
+    <a href="#tutorial" style="background:transparent;color:#00112a;font-size:15px;font-weight:600;padding:16px 36px;border-radius:11px;text-decoration:none;display:inline-block;border:1.5px solid rgba(0,17,42,0.25);">
+      Watch Tutorial
+    </a>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <a href="#" class="dv-logo footer-size">
     <div class="dv-mark"><span>A</span></div>
@@ -917,10 +1135,9 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   </a>
   <div class="footer-links">
     <a href="#features">Features</a>
-    <a href="#validation">Validation</a>
     <a href="#compare">Compare</a>
     <a href="#pricing">Pricing</a>
-    <a href="mailto:dissolva.app@gmail.com">Contact</a>
+        <a href="mailto:dissolva.app@gmail.com">Contact</a>
   </div>
   <div class="footer-copy">© 2026 DissolvA. All rights reserved.</div>
 </footer>
