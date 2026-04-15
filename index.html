@@ -274,6 +274,47 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 .dv-logo.badge-size .dv-mark span { font-size: 12px; margin-top: 1px; }
 .dv-logo.badge-size .dv-wordmark { font-size: 13px; color: white; font-weight: 600; }
 
+
+/* ── VALIDATION SECTION ── */
+.val-section{background:var(--ox4);padding:80px 40px}
+.val-inner{max-width:1000px;margin:0 auto}
+.val-score-banner{display:flex;align-items:center;gap:40px;background:rgba(0,17,42,0.6);border:1px solid rgba(255,191,0,0.18);border-radius:16px;padding:32px 36px;margin-bottom:48px;flex-wrap:wrap}
+.val-score-num{font-size:72px;font-weight:800;color:var(--gold);letter-spacing:-3px;line-height:1}
+.val-score-label{font-size:12px;color:var(--text-dim);margin-top:4px;letter-spacing:0.5px}
+.val-score-divider{width:1px;height:64px;background:rgba(255,191,0,0.12);flex-shrink:0}
+.val-score-detail{flex:1;min-width:200px}
+.val-score-title{font-size:18px;font-weight:700;color:white;margin-bottom:8px;letter-spacing:-0.3px}
+.val-score-text{font-size:14px;color:var(--text-muted);line-height:1.7}
+.val-checks{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+.val-check{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:rgba(76,175,130,0.9)}
+.val-check-dot{width:16px;height:16px;border-radius:50%;background:rgba(76,175,130,0.1);border:1px solid rgba(76,175,130,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;color:#4caf82}
+.val-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:40px}
+.val-card{background:rgba(0,17,42,0.6);border:1px solid var(--border2);border-radius:14px;overflow:hidden;transition:border-color 0.2s}
+.val-card:hover{border-color:rgba(255,191,0,0.25)}
+.val-card-head{background:rgba(0,33,71,0.6);border-bottom:1px solid var(--border2);padding:14px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.val-card-ref{font-size:13px;font-weight:700;color:white;line-height:1.4}
+.val-card-ref-sub{font-size:11px;color:var(--text-dim);margin-top:2px;font-weight:400}
+.val-card-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:3px 10px;border-radius:20px;background:rgba(255,191,0,0.1);color:var(--gold);border:1px solid rgba(255,191,0,0.2);white-space:nowrap;flex-shrink:0}
+.val-card-body{padding:20px}
+.val-compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,191,0,0.06);border-radius:8px;overflow:hidden;margin-bottom:14px}
+.val-compare-head{background:rgba(0,17,42,0.8);padding:8px 12px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim)}
+.val-compare-cell{background:rgba(0,17,42,0.5);padding:12px}
+.val-param{font-size:10px;color:var(--text-dim);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.val-val{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.val-val.ref{color:rgba(232,224,208,0.6)}
+.val-val.dissolva{color:var(--gold)}
+.val-match{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#4caf82;padding:6px 12px;border-radius:20px;background:rgba(76,175,130,0.06);border:1px solid rgba(76,175,130,0.2)}
+.val-note{font-size:11px;color:var(--text-dim);margin-top:10px;font-style:italic;line-height:1.6}
+.val-ref-list{border:1px solid var(--border2);border-radius:12px;overflow:hidden}
+.val-ref-item{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border2);transition:background 0.2s}
+.val-ref-item:last-child{border-bottom:none}
+.val-ref-item:hover{background:rgba(255,191,0,0.02)}
+.val-ref-num{width:26px;height:26px;border-radius:6px;background:rgba(255,191,0,0.08);border:1px solid rgba(255,191,0,0.18);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;margin-top:1px}
+.val-ref-text{flex:1}
+.val-ref-authors{font-size:13px;font-weight:600;color:rgba(232,224,208,0.8);margin-bottom:2px}
+.val-ref-journal{font-size:12px;color:var(--text-dim);font-style:italic}
+.val-ref-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(76,175,130,0.08);color:rgba(76,175,130,0.8);border:1px solid rgba(76,175,130,0.2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+@media(max-width:700px){.val-score-banner{gap:20px}.val-score-divider{display:none}.val-compare-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -1950,117 +1991,7 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
 <!-- ════════════════════════════════════════════════
      YENİ BÖLÜM: SCIENTİFİCALLY VALIDATED
      ════════════════════════════════════════════════ -->
-<section class="val-section" id="validation" style="background:var(--ox4)">
-  <div class="val-inner">
-    <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:14px;background:rgba(76,175,130,0.06);border:1px solid rgba(76,175,130,0.2);border-radius:20px;padding:4px 14px 4px 10px;">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4caf82" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      <span style="font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(76,175,130,0.8);font-weight:600;">Scientifically Validated</span>
-    </div>
-    <div class="sec-label">Peer-Reviewed Accuracy</div>
-    <div class="sec-title">We don't just claim it.<br>We <span style="color:var(--gold)">prove</span> it.</div>
-    <div class="sec-sub">DissolvA's calculation engine was tested against published reference values from DDSolver and RKinetDS — the gold standard tools in pharmaceutical dissolution science.</div>
-    <div class="val-score-banner">
-      <div>
-        <div class="val-score-num">100%</div>
-        <div class="val-score-label">Validation score · 8 / 8 tests passed</div>
-      </div>
-      <div class="val-score-divider"></div>
-      <div class="val-score-detail">
-        <div class="val-score-title">8 independent tests. 8 confirmed results.</div>
-        <div class="val-score-text">Real dissolution data from published studies and analytically generated synthetic datasets were used across three independent test categories.</div>
-        <div class="val-checks">
-          <div class="val-check"><div class="val-check-dot">✓</div>Literature validation</div>
-          <div class="val-check"><div class="val-check-dot">✓</div>Synthetic data tests</div>
-          <div class="val-check"><div class="val-check-dot">✓</div>f2 similarity factor</div>
-          <div class="val-check"><div class="val-check-dot">✓</div>FDA-compliant formulas</div>
-        </div>
-      </div>
-    </div>
-    <div class="val-cards">
-      <div class="val-card">
-        <div class="val-card-head">
-          <div><div class="val-card-ref">Castro et al. — Albendazole Tablet (Product A)</div><div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Table 3</div></div>
-          <div class="val-card-tag">First-Order</div>
-        </div>
-        <div class="val-card-body">
-          <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div><div class="val-compare-head">Published</div><div class="val-compare-head">DissolvA</div>
-            <div class="val-compare-cell"><div class="val-param">Rate K₁</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">K₁</div><div class="val-val ref">0.143</div></div>
-            <div class="val-compare-cell"><div class="val-param">K₁</div><div class="val-val dissolva">0.145</div></div>
-            <div class="val-compare-cell"><div class="val-param">Fit quality</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val ref">0.9991</div></div>
-            <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val dissolva">0.9991</div></div>
-          </div>
-          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Match confirmed — K₁ and R² align with literature</div>
-        </div>
-      </div>
-      <div class="val-card">
-        <div class="val-card-head">
-          <div><div class="val-card-ref">Castro et al. — Albendazole Tablet (Product A)</div><div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Table 3</div></div>
-          <div class="val-card-tag">Weibull</div>
-        </div>
-        <div class="val-card-body">
-          <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div><div class="val-compare-head">Published</div><div class="val-compare-head">DissolvA</div>
-            <div class="val-compare-cell"><div class="val-param">Shape β</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">β</div><div class="val-val ref">0.6238</div></div>
-            <div class="val-compare-cell"><div class="val-param">β</div><div class="val-val dissolva">0.8138</div></div>
-            <div class="val-compare-cell"><div class="val-param">Fit quality</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val ref">0.9998</div></div>
-            <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val dissolva">0.9999</div></div>
-          </div>
-          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Match confirmed — R² near-perfect at 0.9999</div>
-          <div class="val-note">β offset expected — different Weibull variant. RKinetDS reported identical offset (β = 0.8146).</div>
-        </div>
-      </div>
-      <div class="val-card">
-        <div class="val-card-head">
-          <div><div class="val-card-ref">Zhang et al. — DDSolver Profile Comparison Example</div><div class="val-card-ref-sub">Zhang et al. (2010) AAPS J. · BioMed Res Int (2014)</div></div>
-          <div class="val-card-tag">f2 Similarity</div>
-        </div>
-        <div class="val-card-body">
-          <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div><div class="val-compare-head">DDSolver</div><div class="val-compare-head">DissolvA</div>
-            <div class="val-compare-cell"><div class="val-param">Similarity</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">f2</div><div class="val-val ref">23.21</div></div>
-            <div class="val-compare-cell"><div class="val-param">f2</div><div class="val-val dissolva">23.2119</div></div>
-            <div class="val-compare-cell"><div class="val-param">Verdict</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">Result</div><div class="val-val ref" style="font-size:11px">Not similar</div></div>
-            <div class="val-compare-cell"><div class="val-param">Result</div><div class="val-val dissolva" style="font-size:11px">Not similar</div></div>
-          </div>
-          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Perfect match — f2 = 23.2119 vs expected 23.21</div>
-        </div>
-      </div>
-      <div class="val-card">
-        <div class="val-card-head">
-          <div><div class="val-card-ref">Murtaza et al. — Cefixime Microspheres (Formulation 5)</div><div class="val-card-ref-sub">Mendyk et al. (2026) Dissolution Technologies · Korsmeyer-Peppas</div></div>
-          <div class="val-card-tag">Korsmeyer-Peppas</div>
-        </div>
-        <div class="val-card-body">
-          <div class="val-compare-grid">
-            <div class="val-compare-head">Parameter</div><div class="val-compare-head">Published</div><div class="val-compare-head">DissolvA</div>
-            <div class="val-compare-cell"><div class="val-param">Release exp. n</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">n</div><div class="val-val ref">0.487</div></div>
-            <div class="val-compare-cell"><div class="val-param">n</div><div class="val-val dissolva">0.443</div></div>
-            <div class="val-compare-cell"><div class="val-param">Fit quality</div><div class="val-val" style="color:var(--text-dim)">—</div></div>
-            <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val ref">0.9891</div></div>
-            <div class="val-compare-cell"><div class="val-param">R²</div><div class="val-val dissolva">0.9983</div></div>
-          </div>
-          <div class="val-match"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3" stroke="#4caf82" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>Match confirmed — n &lt; 0.45: Fickian diffusion verified</div>
-        </div>
-      </div>
-    </div>
-    <div class="sec-label" style="margin-top:56px;margin-bottom:16px">Literature Used in Validation</div>
-    <div class="val-ref-list">
-      <div class="val-ref-item"><div class="val-ref-num">1</div><div class="val-ref-text"><div class="val-ref-authors">Mendyk, A. et al. — RKinetDS: A Modern R-Based Tool for Dissolution Modeling</div><div class="val-ref-journal">Dissolution Technologies, Feb 2026 · doi:10.14227/DT330126P20</div></div><div class="val-ref-badge">Validation source</div></div>
-      <div class="val-ref-item"><div class="val-ref-num">2</div><div class="val-ref-text"><div class="val-ref-authors">Zhang, Y. et al. — DDSolver: An Add-in Program for Modeling and Comparison of Drug Dissolution Profiles</div><div class="val-ref-journal">AAPS Journal, 2010; 12(3): 263–271 · doi:10.1208/s12248-010-9185-1</div></div><div class="val-ref-badge">Validation source</div></div>
-      <div class="val-ref-item"><div class="val-ref-num">3</div><div class="val-ref-text"><div class="val-ref-authors">Zuo, J. et al. — Evaluation of the DDSolver Software Applications</div><div class="val-ref-journal">BioMed Research International, 2014 · doi:10.1155/2014/204925</div></div><div class="val-ref-badge">f2 reference data</div></div>
-      <div class="val-ref-item"><div class="val-ref-num">4</div><div class="val-ref-text"><div class="val-ref-authors">Ramteke, K.H. et al. — Mathematical Models of Drug Dissolution: A Review</div><div class="val-ref-journal">Scholars Academic Journal of Pharmacy, 2014; 3(5): 388–396</div></div><div class="val-ref-badge">Model theory</div></div>
-      <div class="val-ref-item"><div class="val-ref-num">5</div><div class="val-ref-text"><div class="val-ref-authors">Gao, Y. et al. — Dissolution Kinetics of a BCS Class II API: Diffusion-Based Model Validation</div><div class="val-ref-journal">ACS Omega, 2021; 6: 8056–8067 · doi:10.1021/acsomega.0c05558</div></div><div class="val-ref-badge">Diffusion model</div></div>
-    </div>
-  </div>
-</section>
+
 <section class="compare-section" id="compare">
   <div class="compare-inner">
     <div class="sec-label">Comparison</div>
