@@ -1043,39 +1043,22 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
   <div class="pw-grid">
 
     <div class="pw-card pw-core">
-      <div class="pw-plan">Core</div>
+      <div class="pw-plan">Free</div>
       <div class="pw-price">$0</div>
-      <div class="pw-period">Forever free</div>
-      <div class="pw-annual-note" id="core-annual" style="visibility:hidden">—</div>
-      <div class="pw-desc">For students and researchers exploring dissolution analysis.</div>
+      <div class="pw-period">Free forever</div>
+      <div class="pw-annual-note" style="visibility:hidden">—</div>
+      <div class="pw-desc">For students &amp; academic researchers.</div>
       <div class="pw-divider"></div>
       <ul class="pw-features">
-        <li>f1 / f2 Similarity Analysis</li>
-        <li>10 Kinetic Models</li>
-        <li>Basic compliance check</li>
-        <li>USP / FDA / EP monograph checks</li>
+        <li>62 kinetic models + fitting</li>
+        <li>f1 / f2 similarity + USP / FDA / EMA compliance</li>
+        <li>Statistics — MDT, DE, RSD</li>
+        <li>Bootstrap f2 (parametric)</li>
+        <li>Template Builder + example data</li>
+        <li>Academy — models &amp; methods</li>
+        <li>Excel report (research-use watermark)</li>
       </ul>
       <a href="https://dissanalyze.streamlit.app" target="_blank" class="pw-btn pw-btn-core">Get Started Free →</a>
-    </div>
-
-    <div class="pw-card pw-research">
-      <div class="pw-badge pw-badge-beta">Beta — Free Now</div>
-      <div class="pw-plan gold">Research</div>
-      <div class="pw-price" id="research-price">$9</div>
-      <div class="pw-period" id="research-period">/ month · Free during beta</div>
-      <div class="pw-annual-note" id="research-annual" style="visibility:hidden">—</div>
-      <div class="pw-desc">For academics who need the full kinetic library and reporting.</div>
-      <div class="pw-divider"></div>
-      <ul class="pw-features">
-        <li>Everything in Core</li>
-        <li>62 Kinetic Models (full library)</li>
-        <li>Statistical Analysis — MDT, DE</li>
-        <li>Excel Report (6 sheets)</li>
-        <li>Full Compliance Engine — OOS flagging</li>
-        <li class="beta-li">Bootstrap f2 — parametric <span class="pw-tag">BETA</span></li>
-      </ul>
-      <a href="https://tally.so/r/44oM55" target="_blank" class="pw-btn pw-btn-research">Join Research Beta →</a>
-      <div class="pw-beta-note">Free during beta · Price locks at launch</div>
     </div>
 
     <div class="pw-card pw-pro">
@@ -1089,20 +1072,35 @@ footer{background:var(--ox3);border-top:1px solid var(--border2);padding:40px;di
         <span>Founding members lock in early access pricing — forever.</span>
       </div>
       <ul class="pw-features">
-        <li>Everything in Research</li>
-        <li class="beta-li">AI-Powered Model Recommendation <span class="pw-tag">BETA</span></li>
-        <li class="beta-li">Bootstrap f2 — nonparametric <span class="pw-tag">BETA</span></li>
-        <li class="beta-li">Regulatory Guidance Engine <span class="pw-tag">BETA</span></li>
-        <li class="beta-li">CV &amp; Bootstrap Eligibility Auto-Check <span class="pw-tag">BETA</span></li>
-        <li>Full 8-sheet Excel Report</li>
-        <li>Comparative PDF Report</li>
-        <li>Multi-Profile Batch Analysis</li>
-        <li>Custom Branding on Reports</li>
-        <li>Priority Support + Early Module Access</li>
-        <li class="soon-li">IVIVC Module <span class="pw-soon-tag">COMING SOON</span></li>
+        <li>Everything in Free</li>
+        <li>Full 8-sheet Excel report — no watermark</li>
+        <li>Bootstrap f2 — nonparametric / BCa</li>
+        <li class="soon-li">Batch + comparative PDF <span class="pw-soon-tag">SOON</span></li>
+        <li class="soon-li">AI model recommendation <span class="pw-soon-tag">SOON</span></li>
+        <li class="soon-li">IVIVC module <span class="pw-soon-tag">SOON</span></li>
+        <li class="soon-li">Custom branding on reports <span class="pw-soon-tag">SOON</span></li>
+        <li>Priority support</li>
       </ul>
       <a href="https://tally.so/r/44oM55" target="_blank" class="pw-btn pw-btn-pro">Join Pro Beta →</a>
       <div class="pw-beta-note">Free during beta · Founding price locked at launch</div>
+    </div>
+
+    <div class="pw-card pw-research">
+      <div class="pw-badge pw-badge-beta">For teams</div>
+      <div class="pw-plan gold">Enterprise</div>
+      <div class="pw-price">Custom</div>
+      <div class="pw-period">Annual / per-seat · contact us</div>
+      <div class="pw-annual-note" style="visibility:hidden">—</div>
+      <div class="pw-desc">For pharma / generic manufacturers &amp; CROs.</div>
+      <div class="pw-divider"></div>
+      <ul class="pw-features">
+        <li>Everything in Pro</li>
+        <li class="soon-li">21 CFR Part 11 — audit trail + e-signatures <span class="pw-soon-tag">SOON</span></li>
+        <li class="soon-li">Software validation package (IQ/OQ/PQ) <span class="pw-soon-tag">SOON</span></li>
+        <li class="soon-li">Team seats + admin console + SSO <span class="pw-soon-tag">SOON</span></li>
+        <li class="soon-li">On-prem / private deployment + SLA <span class="pw-soon-tag">SOON</span></li>
+      </ul>
+      <a href="mailto:dissolva.app@gmail.com?subject=DissolvA%20Enterprise" class="pw-btn pw-btn-research">Contact Us →</a>
     </div>
 
   </div>
@@ -1112,22 +1110,15 @@ function setPricing(mode){
   var yearly=mode==='yearly';
   document.getElementById('btn-monthly').className='pw-toggle-btn'+(yearly?'':' active');
   document.getElementById('btn-yearly').className='pw-toggle-btn'+(yearly?' active':'');
+  var pp=document.getElementById('pro-price'), per=document.getElementById('pro-period'), an=document.getElementById('pro-annual');
   if(yearly){
-    document.getElementById('research-price').textContent='$6.58';
-    document.getElementById('research-period').textContent='/ mo · Billed $79/year · Free during beta';
-    document.getElementById('research-annual').textContent='✓ Save $29 vs monthly';
-    document.getElementById('research-annual').style.visibility='visible';
-    document.getElementById('pro-price').textContent='$13.25';
-    document.getElementById('pro-period').textContent='/ mo · Billed $159/year · Free during beta';
-    document.getElementById('pro-annual').textContent='✓ Save $69 vs monthly';
-    document.getElementById('pro-annual').style.visibility='visible';
+    pp.textContent='$13.25';
+    per.textContent='/ mo · Billed $159/year · Free during beta';
+    an.textContent='✓ Save $69 vs monthly'; an.style.visibility='visible';
   } else {
-    document.getElementById('research-price').textContent='$9';
-    document.getElementById('research-period').textContent='/ month · Free during beta';
-    document.getElementById('research-annual').style.visibility='hidden';
-    document.getElementById('pro-price').textContent='$19';
-    document.getElementById('pro-period').textContent='/ month · Free during beta';
-    document.getElementById('pro-annual').style.visibility='hidden';
+    pp.textContent='$19';
+    per.textContent='/ month · Free during beta';
+    an.style.visibility='hidden';
   }
 }
 </script>
@@ -1167,6 +1158,7 @@ function setPricing(mode){
     <a href="#pricing">Pricing</a>
         <a href="mailto:dissolva.app@gmail.com">Contact</a>
     <a href="https://tally.so/r/44oM55" target="_blank">Share Feedback</a>
+    <a href="https://doi.org/10.5281/zenodo.20650463" target="_blank">Cite · DOI</a>
   </div>
   <div class="footer-copy">© 2026 DissolvA. All rights reserved.</div>
 </footer>
